@@ -86,6 +86,6 @@ header {
 }
 
 .unilogo img, .toplogo img {
-    height: 50px;  /* Logonun boyutunu ayarlayabilirsin */
+    height: 100px;  /* Logonun boyutunu ayarlayabilirsin */
     width: auto;
 }
