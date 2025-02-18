@@ -28,15 +28,15 @@ header .toplogo {
 }
 
 header .unilogo img, header .toplogo img {
-    height: 1230px;
-    width: 120px; /* Yüksekliği ve genişliği aynı yaparak logoları simetrik yapıyoruz */
+    height: 123px;
+    width: 123px; /* Yüksekliği ve genişliği aynı yaparak logoları simetrik yapıyoruz */
     border-radius: 50%;
     object-fit: cover;
 }
 
 h1 {
-    margin: 40px 0 20px 0;  /* Başlığın altına mesafe ekledik */
-    font-size: 24px;
+    margin: 35px 0 16px 0;  /* Başlığın altına mesafe ekledik */
+    font-size: 27px;
     text-align: center;
 }
 
