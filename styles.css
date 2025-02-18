@@ -76,7 +76,3 @@ h1 {
     font-size: 24px;
     text-align: center;
 }
-header .unilogo img, header .toplogo img {
-    height: 50px; /* Boyutlarını uygun şekilde ayarla */
-    width: auto;
-}
