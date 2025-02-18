@@ -60,12 +60,17 @@ footer {
 }
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Sol ve sağa hizalar */
     align-items: center;
     background-color: #333;
     color: white;
     padding: 10px 20px;
 }
+
+.unilogo, .toplogo {
+    flex: 1; /* Sol ve sağdaki logoların her biri eşit alanı alır */
+}
+
 header .unilogo img, header .toplogo img {
     height: 50px; /* Boyutları 50px yapıyoruz, istediğin boyutları kullanabilirsin */
     width: auto;  /* Genişlik orantılı olacak */
