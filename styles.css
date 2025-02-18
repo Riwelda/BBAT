@@ -7,18 +7,17 @@ body {
 
 header {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #333;
     color: white;
     padding: 20px 0;
-    position: relative; /* Positioning for absolute elements */
+    position: relative; /* Logoları ve sosyal medya simgelerini yerleştireceğimiz container */
 }
 
 header .unilogo {
     position: absolute;
-    left: 20px; /* Sol üst köşe */
+    left: 20px;  /* Sol üst köşe */
     top: 20px;
 }
 
@@ -41,20 +40,14 @@ h1 {
     text-align: center;
 }
 
-/* Sosyal medya simgelerinin sağ ve sol üst köşeye yerleştirilmesi */
+/* Sosyal medya simgelerinin üst kısıma yerleştirilmesi */
 .social-media {
     position: absolute;
     top: 20px;
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Sağ ve sol arasına simgeler yerleştiriliyor */
+    justify-content: space-between; /* Sosyal simgeler arasına eşit mesafe */
     padding: 0 20px;
-}
-
-.social-media a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .social-icon {
