@@ -3,6 +3,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    background-image: url('https://github.com/Riwelda/BBAT/blob/main/toplogo.jpg?raw=true'); /* Filigran görseli */
+    background-repeat: no-repeat; /* Görselin tekrarlanmaması */
+    background-position: center center; /* Görselin ortalanması */
+    background-attachment: fixed; /* Sayfa kaydırıldığında filigranın sabit kalması */
+    background-size: contain; /* Filigranın boyutunu sayfaya uyacak şekilde ayarla */
 }
 
 header {
@@ -58,29 +63,21 @@ footer {
     bottom: 0;
     width: 100%;
 }
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    background-image: url('https://github.com/Riwelda/BBAT/blob/main/toplogo.jpg?raw=true'); /* Filigran görseli */
-    background-repeat: no-repeat; /* Görselin tekrarlanmaması */
-    background-position: center center; /* Görselin ortalanması */
-    background-attachment: fixed; /* Sayfa kaydırıldığında filigranın sabit kalması */
-    background-size: contain; /* Filigranın boyutunu sayfaya uyacak şekilde ayarla */
-}
 
 body::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%; /* Sayfanın ortasında yerleşmesi için */
+    left: 50%;
+    width: 50vw; /* Genişliği sayfanın %50'si kadar yapıyoruz */
+    height: 50vw; /* Yüksekliği de aynı şekilde yapıyoruz */
     background-image: url('https://github.com/Riwelda/BBAT/blob/main/toplogo.jpg?raw=true'); /* Filigran görseli */
     background-repeat: no-repeat; /* Görselin tekrarlanmaması */
     background-position: center center; /* Görselin ortalanması */
     background-size: contain; /* Filigranın boyutunu sayfaya uyacak şekilde ayarla */
     opacity: 0.1; /* Filigranın opaklığını ayarlıyoruz */
     pointer-events: none; /* Filigran üzerine tıklama engellemesi */
+    border-radius: 50%; /* Daire şekli */
+    transform: translate(-50%, -50%); /* Ortalamak için */
+    z-index: -1; /* Arka planda kalması için */
 }
