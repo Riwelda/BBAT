@@ -110,3 +110,49 @@ footer p {
         transform: translateX(-50%);
     }
 }
+/* Header ve sosyal medya simgeleri */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f8f8f8;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Sosyal medya simgeleri ve iletişim alanı */
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contact-text {
+    font-size: 18px;
+    color: #333;
+    margin-left: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f1f1f1;
+    margin-top: 40px;
+}
