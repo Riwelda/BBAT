@@ -7,11 +7,12 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Dikey yerleşim */
+    justify-content: center;
     align-items: center;
     background-color: #333;
     color: white;
-    padding: 10px 20px;
+    padding: 20px 0;
 }
 
 header .unilogo img, header .toplogo img {
@@ -27,10 +28,35 @@ h1 {
     text-align: center;
 }
 
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contact-text {
+    font-size: 18px;
+    color: #333;
+    margin-left: 10px;
+}
+
 main {
     width: 80%;
     margin: 20px auto;
-    padding-bottom: 50px; /* Sayfanın alt kısmına biraz boşluk ekliyoruz */
+    padding-bottom: 50px;
 }
 
 article {
@@ -58,7 +84,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 25px; /* Siyah bandın yüksekliğini %25 kısalttık */
+    height: 25px;
 }
 
 footer p {
@@ -79,28 +105,12 @@ footer p {
     width: max-content;
 }
 
-/* Fotoğrafların boyutları */
-.etkinlik-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-/* Görselleri taşıyan çerçeve */
-.etkinlik-fotograflar {
-    display: flex;
-    width: max-content;
-    animation: kayma 20s linear infinite;
-}
-
-/* Görseller */
 .etkinlik-fotograflar img {
     width: 200px;
     height: auto;
     margin: 0 10px;
 }
 
-/* Sonsuz döngü efekti */
 @keyframes kayma {
     from {
         transform: translateX(0);
@@ -108,51 +118,4 @@ footer p {
     to {
         transform: translateX(-50%);
     }
-}
-
-/* Header ve sosyal medya simgeleri */
-header {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #f8f8f8;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #333;
-}
-
-/* Sosyal medya simgeleri ve iletişim alanı */
-.social-media {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.social-icon {
-    margin: 0 10px;
-    width: 30px;
-    height: 30px;
-}
-
-.social-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.contact-text {
-    font-size: 18px;
-    color: #333;
-    margin-left: 10px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #f1f1f1;
-    margin-top: 40px;
 }
