@@ -71,9 +71,10 @@ footer p {
     justify-content: flex-start;
     align-items: center;  /* Fotoğrafların dikey ortalanmasını sağlıyoruz */
     width: 100%;
-    overflow: hidden;  /* Kayan fotoğrafların kutu dışına çıkmasını engelliyoruz */
+    overflow: hidden;  /* Fotoğrafların etkinlik kutusunun dışına taşmasını engelliyoruz */
     margin-top: 20px;
     padding-bottom: 10px;  /* Fotoğrafların alt kısmına boşluk bırakıyoruz */
+    position: relative;  /* Kutu içindeki kaydırma için gerekli */
 }
 
 .etkinlik-fotograflar img {
