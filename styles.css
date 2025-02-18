@@ -16,6 +16,18 @@ header {
     position: relative; /* Positioning for absolute elements */
 }
 
+header .unilogo {
+    position: absolute;
+    left: 20px; /* Sol üst köşe */
+    top: 20px;
+}
+
+header .toplogo {
+    position: absolute;
+    right: 20px; /* Sağ üst köşe */
+    top: 20px;
+}
+
 header .unilogo img, header .toplogo img {
     height: 100px;
     width: 100px;
