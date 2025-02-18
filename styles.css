@@ -66,57 +66,33 @@ footer p {
 }
 
 /* Etkinlikler kısmındaki kayan fotoğraflar */
+.etkinlik-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
 .etkinlik-fotograflar {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;  /* Fotoğrafların etkinlik kutusunun dışına taşmasını engelliyoruz */
-    margin-top: 20px;
-    padding-bottom: 10px;
-    position: relative;
-    flex-wrap: nowrap;  /* Fotoğraflar bir satırda sırasıyla kalsın */
+    white-space: nowrap;
+    animation: kayma 20s linear infinite;
+    width: max-content;
 }
 
 /* Fotoğrafların boyutları */
 .etkinlik-fotograflar img {
-    height: auto; /* Boyutları orijinal bırakıyoruz */
     width: 200px; /* Enleri sabit tutuyoruz */
-    margin: 0 10px; /* Fotoğraflar arasında boşluk bırakmak için */
+    height: auto; /* Boyları orijinal bırakıyoruz */
+    margin-right: 10px;
 }
 
 /* Sonsuz kayan animasyon */
-.etkinlik-fotograflar {
-    animation: kayma 20s linear infinite;
-}
-
 @keyframes kayma {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%); /* Fotoğraflar kaymaya başladığında tamamen kayacak */
-    }
-}
-
-.etkinlik-fotograflar {
-    display: flex;
-    animation: kayma 20s linear infinite;
-    width: max-content; /* Burada genişlik içeriğe göre belirlenecek */
-}
-
-/* Bu bölümü ekleyerek fotoğrafların sonrasında tekrar etmesini sağlıyoruz */
-.etkinlik-fotograflar {
-    animation: kayma 20s linear infinite;
-    display: flex;
-}
-
-@keyframes kayma {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%); /* Fotoğraflar kayarken kutunun başlangıcına geri dönecek */
+        transform: translateX(-50%); /* Sürekli tekrar edecek */
     }
 }
 
