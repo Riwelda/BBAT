@@ -77,3 +77,41 @@ body::after {
     transform: translate(-50%, -50%); /* Ortalamak için */
     z-index: -1; /* Arka planda kalması için */
 }
+#etkinlikler {
+    text-align: center;
+    padding: 20px 0;
+}
+
+#etkinlikler h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.etkinlik-fotograflar {
+    display: flex;  /* Fotoğrafları yatayda dizmek için */
+    justify-content: space-between;  /* Fotoğraflar arasında boşluk bırakmak için */
+    overflow: hidden;  /* Taşan kısmı gizlemek için */
+    width: 100%;  /* Şeridin tam genişlikte olmasını sağlar */
+}
+
+.etkinlik-fotograflar img {
+    width: 20%; /* Her fotoğrafın genişliği */
+    object-fit: cover;  /* Fotoğrafın düzgün görünmesini sağlar */
+    margin: 0 5px;  /* Fotoğraflar arasında boşluk bırakmak için */
+    animation: kayma 10s linear infinite; /* Fotoğrafların kaymasını sağlar */
+}
+
+@keyframes kayma {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Fotoğrafların tamamen kaymasını sağlar */
+    }
+}
+
+@media (max-width: 768px) {
+    .etkinlik-fotograflar img {
+        width: 40%;  /* Mobilde fotoğrafların genişliğini değiştir */
+    }
+}
