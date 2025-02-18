@@ -12,52 +12,53 @@ header {
     background-color: #333;
     color: white;
     padding: 20px 0;
-    position: relative; /* Logoları ve sosyal medya simgelerini yerleştireceğimiz container */
+    position: relative;
 }
 
 header .unilogo {
     position: absolute;
-    left: 300px;  /* Sol üst köşe */
+    left: 100px; /* Sol üst köşe */
     top: 20px;
 }
 
 header .toplogo {
     position: absolute;
-    right: 300px; /* Sağ üst köşe */
+    right: 100px; /* Sağ üst köşe */
     top: 20px;
 }
 
 header .unilogo img, header .toplogo img {
     height: 120px;
-    width: 50px;
+    width: 120px; /* Yüksekliği ve genişliği aynı yaparak logoları simetrik yapıyoruz */
     border-radius: 50%;
     object-fit: cover;
 }
 
 h1 {
-    margin: 10px 0;
+    margin: 40px 0 20px 0;  /* Başlığın altına mesafe ekledik */
     font-size: 24px;
     text-align: center;
 }
 
-/* Sosyal medya simgelerinin üst kısıma yerleştirilmesi */
+/* Sosyal medya simgelerinin düzenini başlık altına yerleştirme */
 .social-media {
     position: absolute;
-    top: 50px;
-    width: 50%;
+    top: 120px; /* Başlığın hemen altına */
+    width: 100%;
     display: flex;
-    justify-content: space-between; /* Sosyal simgeler arasına eşit mesafe */
+    justify-content: center; /* Ortaya hizalama */
+    gap: 20px; /* Sosyal simgeler arasına mesafe ekleme */
     padding: 0 20px;
 }
 
 .social-icon {
-    width: 25px;
-    height: 25px;
+    width: 35px; /* Simge boyutunu büyütüyoruz */
+    height: 35px;
 }
 
 .social-icon img {
-    width: 75%;
-    height: 75%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
