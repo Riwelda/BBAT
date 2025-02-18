@@ -92,17 +92,34 @@ footer p {
     0% {
         transform: translateX(0);
     }
-    25% {
-        transform: translateX(-20%); /* Kayma oranını ayarlıyoruz */
+    100% {
+        transform: translateX(-100%); /* Fotoğraflar tamamen kayarak sıfırlanıyor */
     }
-    50% {
-        transform: translateX(-40%);
-    }
-    75% {
-        transform: translateX(-60%);
+}
+
+.etkinlik-fotograflar {
+    display: flex;
+    animation: kayma 20s linear infinite;
+    width: max-content;  /* Burada genişlik içeriğe göre belirlenecek */
+}
+
+.etkinlik-fotograflar img {
+    height: auto;
+    width: 200px; /* Enleri sabit tutuyoruz */
+    margin: 0 5px;
+}
+
+/* Sonsuz kayan animasyon */
+.etkinlik-fotograflar {
+    animation: kayma 20s linear infinite;
+}
+
+@keyframes kayma {
+    0% {
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(-80%);
+        transform: translateX(-100%); /* Fotoğraflar kaymaya başladığında tam kayar */
     }
 }
 
