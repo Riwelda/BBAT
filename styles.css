@@ -7,7 +7,7 @@ body {
 
 header {
     display: flex;
-    flex-direction: column; /* Dikey yerleşim */
+    flex-direction: column; /* Dikey hizalama */
     justify-content: center;
     align-items: center;
     background-color: #333;
@@ -36,7 +36,7 @@ h1 {
 }
 
 .social-icon {
-    margin: 0 10px;
+    margin: 0 15px;
     width: 30px;
     height: 30px;
 }
