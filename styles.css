@@ -15,10 +15,10 @@ header {
 }
 
 header .unilogo img, header .toplogo img {
-    height: 100px;  /* Logonun boyutunu ayarlayabilirsin */
-    width: 100px;   /* Genişlik de eşit olmalı, böylece daire olur */
-    border-radius: 50%;  /* Daire şekli */
-    object-fit: cover;   /* Resmin düzgün görünmesini sağlar */
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 h1 {
@@ -30,7 +30,7 @@ h1 {
 main {
     width: 80%;
     margin: 20px auto;
-    padding-bottom: 50px;  /* Sayfanın alt kısmına biraz boşluk ekliyoruz */
+    padding-bottom: 50px; /* Sayfanın alt kısmına biraz boşluk ekliyoruz */
 }
 
 article {
@@ -58,7 +58,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 25px;  /* Siyah bandın yüksekliğini %25 kısalttık */
+    height: 25px; /* Siyah bandın yüksekliğini %25 kısalttık */
 }
 
 footer p {
@@ -69,18 +69,20 @@ footer p {
 .etkinlik-fotograflar {
     display: flex;
     justify-content: flex-start;
-    align-items: center;  /* Fotoğrafların dikey ortalanmasını sağlıyoruz */
+    align-items: center;
     width: 100%;
     overflow: hidden;  /* Fotoğrafların etkinlik kutusunun dışına taşmasını engelliyoruz */
     margin-top: 20px;
-    padding-bottom: 10px;  /* Fotoğrafların alt kısmına boşluk bırakıyoruz */
-    position: relative;  /* Kutu içindeki kaydırma için gerekli */
+    padding-bottom: 10px;
+    position: relative;
+    flex-wrap: nowrap;  /* Fotoğraflar bir satırda sırasıyla kalsın */
 }
 
+/* Fotoğrafların boyutları */
 .etkinlik-fotograflar img {
-    height: auto;  /* Boyutları orijinal bırakıyoruz */
-    width: 200px;  /* Enleri sabitliyoruz, burada istediğiniz bir değeri verebilirsiniz */
-    margin: 0 5px;  /* Fotoğraflar arasında boşluk bırakmak için */
+    height: auto; /* Boyutları orijinal bırakıyoruz */
+    width: 200px; /* Enleri sabit tutuyoruz */
+    margin: 0 10px; /* Fotoğraflar arasında boşluk bırakmak için */
 }
 
 /* Sonsuz kayan animasyon */
@@ -93,25 +95,20 @@ footer p {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%); /* Fotoğraflar tamamen kayarak sıfırlanıyor */
+        transform: translateX(-100%); /* Fotoğraflar kaymaya başladığında tamamen kayacak */
     }
 }
 
 .etkinlik-fotograflar {
     display: flex;
     animation: kayma 20s linear infinite;
-    width: max-content;  /* Burada genişlik içeriğe göre belirlenecek */
+    width: max-content; /* Burada genişlik içeriğe göre belirlenecek */
 }
 
-.etkinlik-fotograflar img {
-    height: auto;
-    width: 200px; /* Enleri sabit tutuyoruz */
-    margin: 0 5px;
-}
-
-/* Sonsuz kayan animasyon */
+/* Bu bölümü ekleyerek fotoğrafların sonrasında tekrar etmesini sağlıyoruz */
 .etkinlik-fotograflar {
     animation: kayma 20s linear infinite;
+    display: flex;
 }
 
 @keyframes kayma {
@@ -119,12 +116,12 @@ footer p {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%); /* Fotoğraflar kaymaya başladığında tam kayar */
+        transform: translateX(-100%); /* Fotoğraflar kayarken kutunun başlangıcına geri dönecek */
     }
 }
 
 @media (max-width: 768px) {
     .etkinlik-fotograflar img {
-        width: 150px;  /* Mobil ekranlarda enleri küçültüyoruz */
+        width: 150px; /* Mobil ekranlarda enleri küçültüyoruz */
     }
 }
