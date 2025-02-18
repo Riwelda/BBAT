@@ -58,7 +58,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 30px;  /* Siyah bandın yüksekliğini %25 kısalttık */
+    height: 25px;  /* Siyah bandın yüksekliğini %25 kısalttık */
 }
 
 footer p {
@@ -77,8 +77,8 @@ footer p {
 }
 
 .etkinlik-fotograflar img {
-    height: 100%;  /* Yükseklik otomatik olarak ayarlanacak */
-    width: auto;  /* Enler orijinal olarak kalacak */
+    height: auto;  /* Boyutları orijinal bırakıyoruz */
+    width: 200px;  /* Enleri sabitliyoruz, burada istediğiniz bir değeri verebilirsiniz */
     margin: 0 5px;  /* Fotoğraflar arasında boşluk bırakmak için */
 }
 
@@ -107,7 +107,6 @@ footer p {
 
 @media (max-width: 768px) {
     .etkinlik-fotograflar img {
-        height: auto;  /* Yüksekliği orijinal hale getiriyoruz */
-        width: 100%;  /* Fotoğrafların genişliği ekran boyutuna göre ayarlanacak */
+        width: 150px;  /* Mobil ekranlarda enleri küçültüyoruz */
     }
 }
