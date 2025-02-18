@@ -66,3 +66,7 @@ header {
     color: white;
     padding: 10px 20px;
 }
+header .unilogo img, header .toplogo img {
+    height: 50px; /* Boyutları 50px yapıyoruz, istediğin boyutları kullanabilirsin */
+    width: auto;  /* Genişlik orantılı olacak */
+}
