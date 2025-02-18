@@ -17,13 +17,13 @@ header {
 
 header .unilogo {
     position: absolute;
-    left: 20px;  /* Sol üst köşe */
+    left: 200px;  /* Sol üst köşe */
     top: 20px;
 }
 
 header .toplogo {
     position: absolute;
-    right: 20px; /* Sağ üst köşe */
+    right: 200px; /* Sağ üst köşe */
     top: 20px;
 }
 
