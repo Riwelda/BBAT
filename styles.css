@@ -6,25 +6,25 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+    color: white;
+    padding: 10px 20px;
+}
+
+header .unilogo img, header .toplogo img {
+    height: 100px;  /* Logonun boyutunu ayarlayabilirsin */
+    width: 100px;   /* Genişlik de eşit olmalı, böylece daire olur */
+    border-radius: 50%;  /* Daire şekli */
+    object-fit: cover;   /* Resmin düzgün görünmesini sağlar */
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
     text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
 }
 
 main {
@@ -57,35 +57,4 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-}
-
-header .logo img {
-    height: 50px; /* Logonun boyutunu ayarlayabilirsin */
-}
-
-h1 {
-    margin: 0;
-    font-size: 24px;
-    text-align: center;
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333; /* Arka plan rengi */
-    color: white;
-    padding: 10px 20px;
-}
-
-.unilogo img, .toplogo img {
-    height: 100px;  /* Logonun boyutunu ayarlayabilirsin */
-    width: auto;
 }
