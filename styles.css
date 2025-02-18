@@ -17,19 +17,19 @@ header {
 
 header .unilogo {
     position: absolute;
-    left: 250px;  /* Sol üst köşe */
+    left: 300px;  /* Sol üst köşe */
     top: 20px;
 }
 
 header .toplogo {
     position: absolute;
-    right: 250px; /* Sağ üst köşe */
+    right: 300px; /* Sağ üst köşe */
     top: 20px;
 }
 
 header .unilogo img, header .toplogo img {
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 50px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -51,8 +51,8 @@ h1 {
 }
 
 .social-icon {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 }
 
 .social-icon img {
