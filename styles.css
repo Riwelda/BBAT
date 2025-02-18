@@ -18,17 +18,17 @@ header {
 header .unilogo {
     position: absolute;
     left: 100px; /* Sol üst köşe */
-    top: 20px;
+    top: 23px;
 }
 
 header .toplogo {
     position: absolute;
     right: 100px; /* Sağ üst köşe */
-    top: 20px;
+    top: 23px;
 }
 
 header .unilogo img, header .toplogo img {
-    height: 120px;
+    height: 123px;
     width: 120px; /* Yüksekliği ve genişliği aynı yaparak logoları simetrik yapıyoruz */
     border-radius: 50%;
     object-fit: cover;
