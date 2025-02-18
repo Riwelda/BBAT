@@ -67,9 +67,9 @@ footer p {
 
 .etkinlik-fotograflar {
     display: flex;
-    justify-content: space-between;
-    overflow: hidden;
+    justify-content: flex-start;
     width: 100%;
+    overflow: hidden;
     margin-top: 20px;
 }
 
@@ -77,15 +77,28 @@ footer p {
     width: 20%; /* Her fotoğrafın genişliği */
     object-fit: cover;  /* Fotoğrafın düzgün görünmesini sağlar */
     margin: 0 5px;  /* Fotoğraflar arasında boşluk bırakmak için */
-    animation: kayma 10s linear infinite; /* Fotoğrafların kaymasını sağlar */
+}
+
+/* Sonsuz kayan animasyon */
+.etkinlik-fotograflar {
+    animation: kayma 20s linear infinite;
 }
 
 @keyframes kayma {
     0% {
         transform: translateX(0);
     }
+    25% {
+        transform: translateX(-20%); /* Kayma oranını ayarlıyoruz */
+    }
+    50% {
+        transform: translateX(-40%);
+    }
+    75% {
+        transform: translateX(-60%);
+    }
     100% {
-        transform: translateX(-100%); /* Fotoğrafların tamamen kaymasını sağlar */
+        transform: translateX(-80%);
     }
 }
 
