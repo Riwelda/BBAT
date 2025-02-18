@@ -80,24 +80,33 @@ footer p {
 }
 
 /* Fotoğrafların boyutları */
-.etkinlik-fotograflar img {
-    width: 200px; /* Enleri sabit tutuyoruz */
-    height: auto; /* Boyları orijinal bırakıyoruz */
-    margin-right: 10px;
+/* Ana kapsayıcı */
+.etkinlik-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
-/* Sonsuz kayan animasyon */
+/* Görselleri taşıyan çerçeve */
+.etkinlik-fotograflar {
+    display: flex;
+    width: max-content;
+    animation: kayma 20s linear infinite;
+}
+
+/* Görseller */
+.etkinlik-fotograflar img {
+    width: 200px;
+    height: auto;
+    margin: 0 10px;
+}
+
+/* Sonsuz döngü efekti */
 @keyframes kayma {
-    0% {
+    from {
         transform: translateX(0);
     }
-    100% {
-        transform: translateX(-50%); /* Sürekli tekrar edecek */
-    }
-}
-
-@media (max-width: 768px) {
-    .etkinlik-fotograflar img {
-        width: 150px; /* Mobil ekranlarda enleri küçültüyoruz */
+    to {
+        transform: translateX(-50%);
     }
 }
