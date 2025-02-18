@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,25 +19,25 @@ header {
 header .unilogo {
     position: absolute;
     left: 100px; /* Sol üst köşe */
-    top: 200px;
+    top: 20px;
 }
 
 header .toplogo {
     position: absolute;
     right: 100px; /* Sağ üst köşe */
-    top: 200px;
+    top: 20px;
 }
 
 header .unilogo img, header .toplogo img {
-    height: 123px;
-    width: 123px; /* Yüksekliği ve genişliği aynı yaparak logoları simetrik yapıyoruz */
+    height: 120px;
+    width: 120px; /* Yüksekliği ve genişliği aynı yaparak logoları simetrik yapıyoruz */
     border-radius: 50%;
     object-fit: cover;
 }
 
 h1 {
-    margin: 35px 0 16px 0;  /* Başlığın altına mesafe ekledik */
-    font-size: 27px;
+    margin: 40px 0 20px 0;  /* Başlığın altına mesafe ekledik */
+    font-size: 24px;
     text-align: center;
 }
 
