@@ -77,15 +77,7 @@ body::after {
     transform: translate(-50%, -50%); /* Ortalamak için */
     z-index: -1; /* Arka planda kalması için */
 }
-#etkinlikler {
-    text-align: center;
-    padding: 20px 0;
-}
 
-#etkinlikler h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
 
 .etkinlik-fotograflar {
     display: flex;  /* Fotoğrafları yatayda dizmek için */
