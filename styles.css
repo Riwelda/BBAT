@@ -7,12 +7,13 @@ body {
 
 header {
     display: flex;
-    flex-direction: column; /* Dikey hizalama */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #333;
     color: white;
     padding: 20px 0;
+    position: relative; /* Positioning for absolute elements */
 }
 
 header .unilogo img, header .toplogo img {
@@ -28,15 +29,17 @@ h1 {
     text-align: center;
 }
 
+/* Sosyal medya simgelerinin sağ ve sol üst köşeye yerleştirilmesi */
 .social-media {
+    position: absolute;
+    top: 20px;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+    justify-content: space-between; /* Sağ ve sol arasına simgeler yerleştiriliyor */
+    padding: 0 20px;
 }
 
 .social-icon {
-    margin: 0 15px;
     width: 30px;
     height: 30px;
 }
