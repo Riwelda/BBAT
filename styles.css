@@ -3,7 +3,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    /* Filigran görselini body kısmından kaldırdık */
 }
 
 header {
@@ -60,38 +59,12 @@ footer {
     width: 100%;
 }
 
-body::after {
-    content: "";
-    position: absolute;
-    top: 50%; /* Sayfanın ortasında yerleşmesi için */
-    left: 50%;
-    width: 50vw; /* Genişliği sayfanın %50'si kadar yapıyoruz */
-    height: 50vw; /* Yüksekliği de aynı şekilde yapıyoruz */
-    background-image: url('https://github.com/Riwelda/BBAT/blob/main/toplogo.jpg?raw=true'); /* Filigran görseli */
-    background-repeat: no-repeat; /* Görselin tekrarlanmaması */
-    background-position: center center; /* Görselin ortalanması */
-    background-size: contain; /* Filigranın boyutunu sayfaya uyacak şekilde ayarla */
-    opacity: 0.1; /* Filigranın opaklığını ayarlıyoruz */
-    pointer-events: none; /* Filigran üzerine tıklama engellemesi */
-    border-radius: 50%; /* Daire şekli */
-    transform: translate(-50%, -50%); /* Ortalamak için */
-    z-index: -1; /* Arka planda kalması için */
-}
-
-#etkinlikler {
-    text-align: center;
-    padding: 20px 0;
-}
-
-#etkinlikler h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
 .etkinlik-fotograflar {
-    display: flex;  /* Fotoğrafları yatayda dizmek için */
-    justify-content: space-between;  /* Fotoğraflar arasında boşluk bırakmak için */
-    overflow: hidden;  /* Taşan kısmı gizlemek için */
-    width: 100%;  /* Şeridin tam genişlikte olmasını sağlar */
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .etkinlik-fotograflar img {
