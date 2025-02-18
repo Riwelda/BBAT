@@ -66,17 +66,3 @@ header {
     color: white;
     padding: 10px 20px;
 }
-
-header .logo img {
-    height: 50px; /* Logonun boyutunu ayarlayabilirsin */
-}
-
-h1 {
-    margin: 0;
-    font-size: 24px;
-    text-align: center;
-}
-header .unilogo img, header .toplogo img {
-    height: 50px; /* Boyutlarını uygun şekilde ayarla */
-    width: auto;
-}
