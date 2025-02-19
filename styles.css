@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,13 +19,13 @@ header {
 header .unilogo {
     position: absolute;
     left: 50px; /* Sol üst köşe */
-    top: 40px;
+    top: 20px;
 }
 
 header .toplogo {
     position: absolute;
     right: 50px; /* Sağ üst köşe */
-    top: 40px;
+    top: 20px;
 }
 
 header .unilogo img, header .toplogo img {
@@ -40,9 +41,6 @@ h1 {
     margin: 40px 0 20px 0;  /* Başlığın altına mesafe ekledik */
     font-size: 24px;
     text-align: center;
-    position: relative;  /* Konumlandırmayı mümkün kılmak için relative pozisyon ekledik */
-    top: -30%;  /* %30 yukarı taşıma */
-}
 }
 
 /* Sosyal medya simgelerinin düzenini başlık altına yerleştirme */
