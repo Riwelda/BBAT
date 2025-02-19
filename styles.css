@@ -37,7 +37,7 @@ header .unilogo img, header .toplogo img {
 }
 
 h1 {
-    margin: 40px 0 20px 0;  /* Başlığın altına mesafe ekledik */
+    margin: 20px 0 20px 0;  /* Başlığın altına mesafe ekledik */
     font-size: 24px;
     text-align: center;
 }
