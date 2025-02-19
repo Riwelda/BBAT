@@ -39,7 +39,7 @@ header .unilogo img, header .toplogo img {
 
 h1 {
     position: relative;
-    top: -44px; /* 10 piksel yukarı taşı */
+    top: -30px; /* 10 piksel yukarı taşı */
     font-size: 27px;
     text-align: center;
 }
