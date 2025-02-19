@@ -12,7 +12,7 @@ header {
     align-items: center;
     background-color: #333;
     color: white;
-    padding: 40px 0; /* Üst ve alt boşluğu artırdık */
+    padding: 20px 0;
     position: relative;
 }
 
@@ -38,8 +38,7 @@ header .unilogo img, header .toplogo img {
 }
 
 h1 {
-    position: relative;
-    top: -10px; /* 10 piksel yukarı taşı */
+    margin: 40px 0 20px 0;  /* Başlığın altına mesafe ekledik */
     font-size: 24px;
     text-align: center;
 }
