@@ -13,48 +13,52 @@ header {
     color: white;
     padding: 20px 0;
     position: relative;
+    flex-direction: column; /* Mobilde başlık ve logolar alt alta gelsin */
+}
+
+header .unilogo,
+header .toplogo {
+    position: absolute;
+    top: 20px;
 }
 
 header .unilogo {
-    position: absolute;
-    left: 50px; /* Sol üst köşe */
-    top: 20px;
+    left: 10px; /* Mobilde daha yakın sol */
 }
 
 header .toplogo {
-    position: absolute;
-    right: 50px; /* Sağ üst köşe */
-    top: 20px;
+    right: 10px; /* Mobilde daha yakın sağ */
 }
 
 header .unilogo img, header .toplogo img {
-    height: 100px; /* Yükseklik 100px yapıldı */
-    width: 100px; /* Yükseklik ve genişlik eşit oldu */
+    height: 80px; /* Mobilde daha küçük logo boyutları */
+    width: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: none; /* Çerçeveyi kaldırıyoruz */
-    outline: none; /* Dış çerçeveyi engelliyoruz */
+    border: none;
+    outline: none;
 }
 
 h1 {
-    margin: 40px 0 20px 0;  /* Başlığın altına mesafe ekledik */
+    margin: 40px 0 20px 0;
     font-size: 24px;
     text-align: center;
 }
 
-/* Sosyal medya simgelerinin düzenini başlık altına yerleştirme */
+/* Sosyal medya simgeleri başlığın altına taşınacak */
 .social-media {
-    position: absolute;
-    top: 90px; /* Başlığın hemen altına taşıdık */
+    position: relative;
+    top: 30px;
     width: 100%;
     display: flex;
-    justify-content: center; /* Ortaya hizalama */
-    gap: 40px; /* Sosyal simgeler arasına mesafe ekleme */
+    justify-content: center;
+    gap: 20px;
     padding: 0 20px;
+    background-color: #333;
 }
 
 .social-icon {
-    width: 27px; /* Simge boyutunu büyütüyoruz */
+    width: 27px;
     height: 27px;
 }
 
@@ -108,7 +112,6 @@ footer p {
     margin: 0;
 }
 
-/* Etkinlikler kısmındaki kayan fotoğraflar */
 .etkinlik-container {
     overflow: hidden;
     width: 100%;
@@ -134,5 +137,64 @@ footer p {
     }
     to {
         transform: translateX(-50%);
+    }
+}
+
+/* Mobil uyumlu medya sorgusu */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px; /* Başlık boyutunu küçültüyoruz */
+        margin: 20px 0;
+    }
+
+    .social-media {
+        top: 60px; /* Daha aşağıya yerleştiriyoruz */
+        flex-direction: row; /* Simge dizilimini yatay yapıyoruz */
+        gap: 15px; /* Simge mesafelerini azaltıyoruz */
+    }
+
+    .social-icon {
+        width: 25px; /* Simge boyutunu küçültüyoruz */
+        height: 25px;
+    }
+
+    .etkinlik-fotograflar img {
+        width: 150px; /* Görsel boyutlarını küçültüyoruz */
+    }
+
+    footer {
+        padding: 15px 0; /* Footer paddingini ayarlıyoruz */
+        font-size: 14px;
+    }
+}
+
+/* Mobil için daha küçük ekranlarda */
+@media (max-width: 480px) {
+    header .unilogo img, header .toplogo img {
+        height: 60px; /* Logoları daha da küçültüyoruz */
+        width: 60px;
+    }
+
+    h1 {
+        font-size: 18px; /* Başlık daha da küçülecek */
+    }
+
+    .social-media {
+        top: 80px;
+        gap: 10px;
+    }
+
+    .social-icon {
+        width: 20px; /* Daha küçük simgeler */
+        height: 20px;
+    }
+
+    .etkinlik-fotograflar img {
+        width: 120px; /* Küçük görseller */
     }
 }
