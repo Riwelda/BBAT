@@ -43,18 +43,18 @@ h1 {
 /* Sosyal medya simgelerinin düzenini başlık altına yerleştirme */
 .social-media {
     position: absolute;
-    top: 80px; /* Başlığın hemen altına taşıdık */
+    top: 90px; /* Başlığın hemen altına taşıdık */
     width: 100%;
     display: flex;
     justify-content: center; /* Ortaya hizalama */
-    gap: 20px; /* Sosyal simgeler arasına mesafe ekleme */
+    gap: 30px; /* Sosyal simgeler arasına mesafe ekleme */
     padding: 0 20px;
     background-color: #333; /* Siyah bandın rengi */
 }
 
 .social-icon {
-    width: 25px; /* Simge boyutunu büyütüyoruz */
-    height: 25px;
+    width: 27px; /* Simge boyutunu büyütüyoruz */
+    height: 27px;
 }
 
 .social-icon img {
