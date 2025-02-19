@@ -12,7 +12,7 @@ header {
     align-items: center;
     background-color: #333;
     color: white;
-    padding: 20px 0;
+    padding: 40px 0; /* Üst ve alt boşluğu artırdık */
     position: relative;
 }
 
