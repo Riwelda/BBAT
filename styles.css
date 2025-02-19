@@ -32,6 +32,8 @@ header .unilogo img, header .toplogo img {
     width: 100px; /* Yükseklik ve genişlik eşit oldu */
     border-radius: 50%;
     object-fit: cover;
+    border: none; /* Çerçeveyi kaldırıyoruz */
+    outline: none; /* Dış çerçeveyi engelliyoruz */
 }
 
 h1 {
