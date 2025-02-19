@@ -13,25 +13,18 @@ header {
     color: white;
     padding: 20px 0;
     position: relative;
-    flex-direction: column; /* Mobilde başlık ve logolar alt alta gelsin */
+    flex-direction: column; /* Başlık ve logolar alt alta gelsin */
 }
 
 header .unilogo,
 header .toplogo {
-    position: absolute;
-    top: 20px;
-}
-
-header .unilogo {
-    left: 10px; /* Mobilde daha yakın sol */
-}
-
-header .toplogo {
-    right: 10px; /* Mobilde daha yakın sağ */
+    position: relative;
+    top: 0; /* position absolute yerine relative kullanalım */
+    margin: 10px; /* Logolar arasındaki mesafeyi kontrol edebiliriz */
 }
 
 header .unilogo img, header .toplogo img {
-    height: 80px; /* Mobilde daha küçük logo boyutları */
+    height: 80px;
     width: 80px;
     border-radius: 50%;
     object-fit: cover;
@@ -45,16 +38,15 @@ h1 {
     text-align: center;
 }
 
-/* Sosyal medya simgeleri başlığın altına taşınacak */
+/* Sosyal medya simgeleri başlığın altına yerleştirilecek */
 .social-media {
-    position: relative;
-    top: 30px;
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 0 20px;
     background-color: #333;
+    margin-top: 20px; /* Başlık ve simgeler arasına mesafe ekleyelim */
 }
 
 .social-icon {
@@ -148,27 +140,28 @@ footer p {
     }
 
     h1 {
-        font-size: 20px; /* Başlık boyutunu küçültüyoruz */
+        font-size: 20px;
         margin: 20px 0;
     }
 
     .social-media {
-        top: 60px; /* Daha aşağıya yerleştiriyoruz */
-        flex-direction: row; /* Simge dizilimini yatay yapıyoruz */
-        gap: 15px; /* Simge mesafelerini azaltıyoruz */
+        top: 60px;
+        flex-direction: row;
+        gap: 15px;
+        margin-top: 40px; /* Mobilde simgeleri biraz daha aşağıya kaydırıyoruz */
     }
 
     .social-icon {
-        width: 25px; /* Simge boyutunu küçültüyoruz */
+        width: 25px;
         height: 25px;
     }
 
     .etkinlik-fotograflar img {
-        width: 150px; /* Görsel boyutlarını küçültüyoruz */
+        width: 150px;
     }
 
     footer {
-        padding: 15px 0; /* Footer paddingini ayarlıyoruz */
+        padding: 15px 0;
         font-size: 14px;
     }
 }
@@ -176,25 +169,26 @@ footer p {
 /* Mobil için daha küçük ekranlarda */
 @media (max-width: 480px) {
     header .unilogo img, header .toplogo img {
-        height: 60px; /* Logoları daha da küçültüyoruz */
+        height: 60px; 
         width: 60px;
     }
 
     h1 {
-        font-size: 18px; /* Başlık daha da küçülecek */
+        font-size: 18px;
     }
 
     .social-media {
         top: 80px;
         gap: 10px;
+        margin-top: 50px; /* Daha fazla mesafe ekliyoruz */
     }
 
     .social-icon {
-        width: 20px; /* Daha küçük simgeler */
+        width: 20px;
         height: 20px;
     }
 
     .etkinlik-fotograflar img {
-        width: 120px; /* Küçük görseller */
+        width: 120px;
     }
 }
