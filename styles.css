@@ -12,7 +12,7 @@ header {
     align-items: center;
     background-color: #333;
     color: white;
-    padding: 30px 0;
+    padding: 37px 0;
     position: relative;
 }
 
@@ -48,7 +48,7 @@ h1 {
 /* Sosyal medya simgelerinin düzenini başlık altına yerleştirme */
 .social-media {
     position: absolute;
-    top: 90px; /* Başlığın hemen altına taşıdık */
+    top: 85px; /* Başlığın hemen altına taşıdık */
     width: 100%;
     display: flex;
     justify-content: center; /* Ortaya hizalama */
