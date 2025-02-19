@@ -28,9 +28,9 @@ header .toplogo {
 }
 
 header .unilogo img, header .toplogo img {
-    height: 100px; /* Daha uygun bir yükseklik */
+    height: 80px; /* Daha uygun bir yükseklik */
     width: 100px; /* Yükseklik ve genişlik aynı, simetrik boyutlar */
-    border-radius: 50%;
+    border-radius: 75%;
     object-fit: cover;
 }
 
