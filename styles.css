@@ -38,10 +38,12 @@ header .unilogo img, header .toplogo img {
 }
 
 h1 {
-    margin: 40px 0 20px 0;  /* Başlığın altına mesafe ekledik */
+    position: relative;
+    top: -10px; /* 10 piksel yukarı taşı */
     font-size: 24px;
     text-align: center;
 }
+
 
 /* Sosyal medya simgelerinin düzenini başlık altına yerleştirme */
 .social-media {
