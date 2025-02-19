@@ -47,7 +47,7 @@ h1 {
     width: 100%;
     display: flex;
     justify-content: center; /* Ortaya hizalama */
-    gap: 30px; /* Sosyal simgeler arasına mesafe ekleme */
+    gap: 40px; /* Sosyal simgeler arasına mesafe ekleme */
     padding: 0 20px;
     background-color: #333; /* Siyah bandın rengi */
 }
