@@ -1,3 +1,5 @@
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -17,44 +19,45 @@ header {
 
 header .unilogo {
     position: absolute;
-    left: 50px;
+    left: 50px; /* Sol üst köşe */
     top: 20px;
 }
 
 header .toplogo {
     position: absolute;
-    right: 50px;
+    right: 50px; /* Sağ üst köşe */
     top: 20px;
 }
 
 header .unilogo img, header .toplogo img {
-    height: 100px;
-    width: 100px;
+    height: 100px; /* Yükseklik 100px yapıldı */
+    width: 100px; /* Yükseklik ve genişlik eşit oldu */
     border-radius: 50%;
     object-fit: cover;
-    border: none;
-    outline: none;
+    border: none; /* Çerçeveyi kaldırıyoruz */
+    outline: none; /* Dış çerçeveyi engelliyoruz */
 }
 
 h1 {
     position: relative;
-    top: -10px;
+    top: -10px; /* 10 piksel yukarı taşı */
     font-size: 24px;
     text-align: center;
 }
 
+/* Sosyal medya simgelerinin düzenini başlık altına yerleştirme */
 .social-media {
     position: absolute;
-    top: 85px;
+    top: 85px; /* Başlığın hemen altına taşıdık */
     width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    justify-content: center; /* Ortaya hizalama */
+    gap: 40px; /* Sosyal simgeler arasına mesafe ekleme */
     padding: 0 20px;
 }
 
 .social-icon {
-    width: 27px;
+    width: 27px; /* Simge boyutunu büyütüyoruz */
     height: 27px;
 }
 
@@ -63,28 +66,40 @@ h1 {
     height: 100%;
     object-fit: contain;
 }
-
 main {
     width: 80%;
     margin: 20px auto;
     padding-bottom: 50px;
 }
 
+article {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
 .photo-strip {
-    width: 100%;
-    overflow: hidden;
+    width: 100%; /* Konteyneri ekran genişliği kadar yapar */
+    overflow: hidden; /* Fotoğraf taşarsa gizlenmesini sağlar */
 }
 
 .photo-strip img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+    width: 100%; /* Fotoğrafı genişlik olarak konteynere uyacak şekilde yapar */
+    height: auto; /* Yüksekliği, genişliğe orantılı olarak ayarlanır */
+    object-fit: cover; /* Fotoğrafın, konteyneri tamamen kaplamasını sağlar, gerekirse kesilebilir */
 }
 
-.photo-strip img:hover {
-    transform: scale(1.2);
+
+article h2 {
+    margin-top: 0;
+}
+
+.meta {
+    font-size: 0.9em;
+    color: #666;
 }
 
 footer {
@@ -102,6 +117,7 @@ footer p {
     margin: 0;
 }
 
+/* Etkinlikler kısmındaki kayan fotoğraflar */
 .etkinlik-container {
     overflow: hidden;
     width: 100%;
@@ -130,15 +146,18 @@ footer p {
     }
 }
 
+/* Mobil uyumluluk */
 @media screen and (max-width: 768px) {
+    /* Mobilde başlık ve logoları dikey hizala */
     header {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    header .unilogo img, header .toplogo img {
-        width: 70px;
-        height: 70px;
+    header .unilogo img,
+    header .toplogo img {
+        width: 70px; /* Logoların genişliğini küçültüyoruz */
+        height: 70px; /* Logoların yüksekliğini küçültüyoruz */
     }
 
     header .unilogo {
@@ -155,15 +174,29 @@ footer p {
 
     h1 {
         font-size: 20px;
-        text-align: center;
+        text-align: center; /* Mobilde ortalama */
         width: 100%;
+        display: flex;
+        justify-content: center;
         margin: 30px 0;
         margin-top: 70px; 
     }
 
     .social-media {
-        display: flex;
-        flex-direction: row;
-        gap: 15px;
-        margin-top: 87px;
-        margin-left: -20px
+    display: flex;
+    flex-direction: row; /* Yatay sıralama */
+    gap: 15px; /* Öğeler arasındaki boşluk */
+    margin-top: 87px;
+    margin-left: -20px; /* Sol margin'i sıfırla */
+}
+
+    main {
+        width: 90%;
+    }
+
+    footer {
+        position: relative;
+        height: auto;
+        padding: 15px 0;
+    }
+}
