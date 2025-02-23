@@ -79,13 +79,13 @@ h1 {
     height: 100%;
     object-fit: contain;
     filter: grayscale(100%) invert(100%); /* Siyah beyaz ve ters renk efekti */
+    transition: all 0.3s ease; /* Hover efektini daha yumuşak yapar */
 }
 
-
-.social-icon:hover img {
-    transform: scale(1.1);
-    filter: brightness(1.2);
+.social-icon img:hover {
+    filter: grayscale(0%) invert(0%); /* Hover sırasında renkli görünmesini sağlar */
 }
+
 
 /* İçerik ve fotoğraf */
 main {
