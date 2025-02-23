@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,7 +14,6 @@ header {
     color: white;
     padding: 37px 0;
     position: relative;
-    flex-wrap: wrap; /* Esneklik sağlamak için */
 }
 
 header .unilogo {
@@ -65,14 +65,10 @@ h1 {
     height: 100%;
     object-fit: contain;
 }
-
 main {
     width: 80%;
     margin: 20px auto;
     padding-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* İçerikleri ortalamak için */
 }
 
 article {
@@ -82,6 +78,7 @@ article {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 
 article h2 {
     margin-top: 0;
@@ -118,14 +115,13 @@ footer p {
     display: flex;
     white-space: nowrap;
     animation: kayma 20s linear infinite;
-    width: 100%; /* Burası %100 yapıldı */
+    width: max-content;
 }
 
 .etkinlik-fotograflar img {
     width: 200px;
     height: auto;
     margin: 0 10px;
-    object-fit: cover; /* Taşmayı engellemek için */
 }
 
 @keyframes kayma {
@@ -133,13 +129,13 @@ footer p {
         transform: translateX(0);
     }
     to {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 
 /* Mobil uyumluluk */
 @media screen and (max-width: 768px) {
-    /* Başlık ve logoları dikey hizala */
+    /* Mobilde başlık ve logoları dikey hizala */
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -170,16 +166,16 @@ footer p {
         display: flex;
         justify-content: center;
         margin: 30px 0;
-        margin-top: 70px;
+        margin-top: 70px; 
     }
 
     .social-media {
-        display: flex;
-        flex-direction: row; /* Yatay sıralama */
-        gap: 15px; /* Öğeler arasındaki boşluk */
-        margin-top: 87px;
-        margin-left: -20px; /* Sol margin'i sıfırla */
-    }
+    display: flex;
+    flex-direction: row; /* Yatay sıralama */
+    gap: 15px; /* Öğeler arasındaki boşluk */
+    margin-top: 87px;
+    margin-left: -20px; /* Sol margin'i sıfırla */
+}
 
     main {
         width: 90%;
@@ -189,24 +185,5 @@ footer p {
         position: relative;
         height: auto;
         padding: 15px 0;
-    }
-
-    /* Etkinlik fotoğraflarının daha iyi görünmesi için düzenleme */
-    .etkinlik-fotograflar {
-        width: 100%; /* Kayan fotoğrafların genişliği 100% */
-        display: flex;
-        justify-content: flex-start; /* Fotoğrafların sola hizalanması */
-    }
-
-    .etkinlik-fotograflar img {
-        width: 150px; /* Fotoğrafları mobilde küçültüyoruz */
-    }
-
-    .mission-vision-container {
-        flex-direction: column; /* Küçük ekranlarda alt alta diz */
-    }
-
-    .mission, .vision {
-        width: 100%; /* Eşit genişlikte olmasını sağlar */
     }
 }
