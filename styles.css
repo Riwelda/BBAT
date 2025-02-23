@@ -70,14 +70,6 @@ main {
     padding-bottom: 50px;
 }
 
-article {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 .photo-strip {
     width: 100%;
     overflow: hidden;
@@ -87,15 +79,12 @@ article {
     width: 100%;
     height: auto;
     object-fit: cover;
+    cursor: pointer; /* Tıklanabilir hale getiriyoruz */
+    transition: transform 0.3s ease-in-out; /* Geçiş efekti ekliyoruz */
 }
 
-article h2 {
-    margin-top: 0;
-}
-
-.meta {
-    font-size: 0.9em;
-    color: #666;
+.photo-strip img:hover {
+    transform: scale(1.2); /* Fotoğrafı hover ile büyütme */
 }
 
 footer {
@@ -111,34 +100,6 @@ footer {
 
 footer p {
     margin: 0;
-}
-
-.etkinlik-container {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-}
-
-.etkinlik-fotograflar {
-    display: flex;
-    white-space: nowrap;
-    animation: kayma 20s linear infinite;
-    width: max-content;
-}
-
-.etkinlik-fotograflar img {
-    width: 200px;
-    height: auto;
-    margin: 0 10px;
-}
-
-@keyframes kayma {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
 }
 
 /* Mobil uyumluluk */
