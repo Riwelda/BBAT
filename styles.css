@@ -140,8 +140,8 @@ footer p {
 
 /* Etkinlikler kısmındaki kayan fotoğraflar */
 .etkinlik-container {
-    overflow: hidden; /* Yatay taşmayı engelle */
-    width: 100%; /* Kapsayıcıyı tam genişlikte yap */
+    overflow: hidden;
+    width: 100%;
     position: relative;
 }
 
@@ -149,31 +149,32 @@ footer p {
     display: flex;
     white-space: nowrap;
     animation: kayma 20s linear infinite;
-    width: 100%; /* Genişlik %100 yapıldı */
+    width: max-content;
 }
 
 .etkinlik-fotograflar img {
-    width: 200px; /* Her fotoğrafın genişliği 200px */
+    width: 200px;
     height: auto;
-    margin: 0 10px; /* Fotoğraflar arasına boşluk ekleniyor */
+    margin: 0 10px;
 }
 
-/* Animasyon: Fotoğrafların kaymasını sağla */
 @keyframes kayma {
     from {
-        transform: translateX(0); /* Başlangıçta tam hizalanmış */
+        transform: translateX(0);
     }
     to {
-        transform: translateX(-100%); /* Fotoğrafların tamamı ekranı kaydırarak geçecek */
+        transform: translateX(-50%);
     }
 }
 
 /* Mobil uyumluluk */
 @media screen and (max-width: 768px) {
+    /* Mobilde başlık ve logoları dikey hizala */
     header {
         flex-direction: column;
         align-items: flex-start;
     }
+
 
     header .unilogo img,
     header .toplogo img {
