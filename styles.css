@@ -173,17 +173,25 @@ footer p {
 @media screen and (max-width: 768px) {
     /* Mobilde sosyal medya simgelerinin boyutunu küçültüyoruz */
     .social-icon img {
-        width: 18px;  /* Küçük boyut */
-        height: 18px;
+        width: 20px;  /* Küçük boyut */
+        height: 20px;
     }
 
+/* Sosyal medya simgelerinin turuncu arka planını küçültüyoruz */
+    .social-icon {
+        width: 30px;   /* Arka planın genişliğini küçültüyoruz */
+        height: 30px;  /* Arka planın yüksekliğini küçültüyoruz */
+        padding: 5px;  /* İçeriye biraz boşluk ekliyoruz */
+    }
+
+    
     /* Sosyal medya simgelerinin arka planını yukarı taşıyoruz */
     .social-media {
         position: absolute;
-        top: 60px; /* Yukarıya taşıma */
+        top: 67px; /* Yukarıya taşıma */
         display: flex;
         justify-content: center;
-        gap: 20px;  /* Aralarındaki mesafeyi biraz küçültüyoruz */
+        gap: 24px;  /* Aralarındaki mesafeyi biraz küçültüyoruz */
         margin-left: -20px; /* Sol margin'i sıfırlıyoruz */
     }
 }
