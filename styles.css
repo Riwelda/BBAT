@@ -171,7 +171,6 @@ footer p {
     .social-media {
     display: flex;
     flex-direction: row; /* Yatay sıralama */
-    justify-content: flex-start; /* Öğeleri sola hizala */
     gap: 15px; /* Öğeler arasındaki boşluk */
     margin-top: 87px;
     margin-left: 200; /* Sol margin'i sıfırla */
