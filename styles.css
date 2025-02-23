@@ -139,19 +139,24 @@ footer p {
 }
 
 @media screen and (max-width: 768px) {
-    header {
-        padding: 10px; /* Mobilde daha az padding */
+    /* Header zaten position: relative olduğundan referans alacaktır */
+    
+    /* Başlık içindeki logoları absolute konuma getiriyoruz */
+    header .unilogo {
+         position: absolute;
+         left: 10px; /* Sol köşeye 10px mesafe */
+         top: 10px;  /* Üstten 10px mesafe */
     }
-
-    header .unilogo, 
     header .toplogo {
-        width: 60px;
-        height: 60px;
+         position: absolute;
+         right: 10px; /* Sağ köşeye 10px mesafe */
+         top: 10px;   /* Üstten 10px mesafe */
     }
-
-    header h1 {
+    
+    /* Diğer mobil düzenlemeler */
+    h1 {
         font-size: 20px;
-        margin: 0 10px; /* Yan boşluk ekleyebilirsin */
+        margin: 10px 0;
     }
 
     .social-media {
@@ -160,7 +165,7 @@ footer p {
         flex-direction: row;
         justify-content: center;
         gap: 15px;
-        margin-top: -10px; /* Sosyal medya ikonlarını yukarı taşı */
+        margin-top: 60px; /* İhtiyaca göre ayarlanabilir */
     }
 
     .social-icon {
