@@ -142,16 +142,19 @@ footer p {
 /* Mobil uyumluluk */
 @media screen and (max-width: 768px) {
     header .unilogo {
+        position: absolute;
         left: 10px;
         top: 10px;
     }
 
     header .toplogo {
+        position: absolute;
         right: 10px;
         top: 10px;
     }
 
     h1 {
+         flex-grow: 1;
         font-size: 20px;
         margin: 10px 0;
     }
