@@ -87,7 +87,9 @@ main {
 
 .mission-vision {
     display: flex;
+    flex-direction: row; /* Yan yana sıralamak için */
     justify-content: space-between;
+    align-items: flex-start; /* Üst hizalama */
     gap: 20px;
     background-color: #fff;
     padding: 20px;
@@ -96,7 +98,7 @@ main {
 }
 
 .mission, .vision {
-    width: 50%;
+    width: 48%; /* İç içe girmemesi için biraz boşluk bırak */
 }
 
 
@@ -187,6 +189,18 @@ footer p {
         right: 10px;
         top: 10px;
     }
+
+/* Mobil uyumluluk için */
+@media screen and (max-width: 768px) {
+    .mission-vision {
+        flex-direction: column; /* Mobilde alt alta sıralama */
+    }
+    .mission, .vision {
+        width: 100%;
+    }
+}
+
+    
 
     h1 {
         font-size: 20px;
