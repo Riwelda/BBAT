@@ -144,8 +144,7 @@ footer p {
 
 /* Etkinlikler kısmındaki kayan fotoğraflar */
 .etkinlik-container {
-     overflow-x: hidden; /* Yatay taşmayı engelle */
-    overflow: hidden;
+    overflow-x: hidden; /* Yatay taşmayı engelle */
     width: 100%;
     position: relative;
 }
@@ -154,32 +153,31 @@ footer p {
     display: flex;
     white-space: nowrap;
     animation: kayma 20s linear infinite;
-    width: max-content;
-     max-width: 100%; /* Kapsayıcıya göre genişliği sınırlayın */
+    width: 100%; /* Kapsayıcının genişliğini %100 yapalım */
 }
 
 .etkinlik-fotograflar img {
     width: 200px;
     height: auto;
     margin: 0 10px;
-    max-width: 100%; /* Fotoğrafların genişliğini sınırlayın */
 }
 
+/* Kayma animasyonu */
 @keyframes kayma {
     from {
         transform: translateX(0);
     }
     to {
-        transform: translateX(-50%);
+        transform: translateX(-100%); /* Fotoğraflar ekranı tamamen kaydıracak şekilde */
     }
 }
 
-@keyframes kayma {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
+
+/* Mobil uyumluluk */
+@media screen and (max-width: 768px) {
+    /* Etkinlik fotoğraflarının daha küçük ekranlarda taşmaması için */
+    .etkinlik-fotograflar {
+        width: 300%; /* Küçük ekranlarda 3 kat genişlik vererek kayma oranını ayarlıyoruz */
     }
 }
 
