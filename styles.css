@@ -46,7 +46,7 @@ h1 {
 /* Sosyal medya simgelerinin düzenini başlık altına yerleştirme */
 .social-media {
     position: absolute;
-    top: 85px; /* Başlığın hemen altına taşıdık */
+    top: 60px; /* Başlığın hemen altına taşıdık */
     width: 100%;
     display: flex;
     justify-content: center; /* Ortaya hizalama */
