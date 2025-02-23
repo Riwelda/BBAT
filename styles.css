@@ -61,7 +61,7 @@ h1 {
    
     gap: 20px; /* İkonlar arasındaki mesafeyi azaltma */
     padding: 0 20px;
-    margin-left: -40px; /* Sola kaydırmak için */
+    margin-left: 40px; /* Sola kaydırmak için */
 }
 
 /* Sosyal medya simgesi */
