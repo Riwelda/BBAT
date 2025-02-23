@@ -7,49 +7,55 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between; /* Öğeler arasında boşluk bırak */
+    justify-content: center;
     align-items: center;
     background-color: #333;
     color: white;
-    padding: 37px 50px; /* Üst/alt ve sağ/sol iç boşluklar */
+    padding: 37px 0;
     position: relative;
 }
 
-header .unilogo,
-header .toplogo {
-    /* Artık absolute konumlandırmaya gerek yok */
+header .unilogo {
+    position: absolute;
+    left: 50px; /* Sol üst köşe */
+    top: 20px;
 }
 
-header .unilogo img, 
-header .toplogo img {
-    height: 100px;
-    width: 100px;
+header .toplogo {
+    position: absolute;
+    right: 50px; /* Sağ üst köşe */
+    top: 20px;
+}
+
+header .unilogo img, header .toplogo img {
+    height: 100px; /* Yükseklik 100px yapıldı */
+    width: 100px; /* Yükseklik ve genişlik eşit oldu */
     border-radius: 50%;
     object-fit: cover;
-    border: none;
-    outline: none;
+    border: none; /* Çerçeveyi kaldırıyoruz */
+    outline: none; /* Dış çerçeveyi engelliyoruz */
 }
 
 h1 {
+    position: relative;
+    top: -10px; /* 10 piksel yukarı taşı */
     font-size: 24px;
-    margin: 0;
     text-align: center;
-    flex-grow: 1; /* Boş alanı kaplayarak ortalanmasını sağlar */
 }
 
-/* Sosyal medya simgelerinin düzeni */
+/* Sosyal medya simgelerinin düzenini başlık altına yerleştirme */
 .social-media {
     position: absolute;
-    top: 85px;
+    top: 85px; /* Başlığın hemen altına taşıdık */
     width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    justify-content: center; /* Ortaya hizalama */
+    gap: 40px; /* Sosyal simgeler arasına mesafe ekleme */
     padding: 0 20px;
 }
 
 .social-icon {
-    width: 27px;
+    width: 27px; /* Simge boyutunu büyütüyoruz */
     height: 27px;
 }
 
@@ -103,4 +109,83 @@ footer p {
     margin: 0;
 }
 
-/* Etkinlikler kısmı
+/* Etkinlikler kısmındaki kayan fotoğraflar */
+.etkinlik-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.etkinlik-fotograflar {
+    display: flex;
+    white-space: nowrap;
+    animation: kayma 20s linear infinite;
+    width: max-content;
+}
+
+.etkinlik-fotograflar img {
+    width: 200px;
+    height: auto;
+    margin: 0 10px;
+}
+
+@keyframes kayma {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Header zaten position: relative olduğundan referans alacaktır */
+    
+    /* Başlık içindeki logoları absolute konuma getiriyoruz */
+    header .unilogo {
+         position: absolute;
+         left: 10px; /* Sol köşeye 10px mesafe */
+         top: 10px;  /* Üstten 10px mesafe */
+    }
+    header .toplogo {
+         position: absolute;
+         right: 10px; /* Sağ köşeye 10px mesafe */
+         top: 10px;   /* Üstten 10px mesafe */
+    }
+    
+    /* Diğer mobil düzenlemeler */
+h1 {
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+    flex-grow: 1; /* Boş alanı kaplayarak ortalanmasını sağlar */
+}
+    .social-media {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 60px; /* İhtiyaca göre ayarlanabilir */
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    .etkinlik-fotograflar img {
+        width: 150px;
+        margin: 0 5px;
+    }
+
+    footer {
+        position: relative;
+        height: auto;
+        padding: 15px 0;
+    }
+}
