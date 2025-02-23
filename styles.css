@@ -156,7 +156,7 @@ footer p {
     /* Diğer mobil düzenlemeler */
     h1 {
     font-size: 20px;
-    margin: 10px 15px 10px 25px; /* Sırasıyla: üst, sağ, alt, sol boşluk */
+    margin: 10px 15px 10px 50px; /* Sırasıyla: üst, sağ, alt, sol boşluk */
 }
     .social-media {
         position: relative;
