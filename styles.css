@@ -144,6 +144,7 @@ footer p {
 
 /* Etkinlikler kısmındaki kayan fotoğraflar */
 .etkinlik-container {
+     overflow-x: hidden; /* Yatay taşmayı engelle */
     overflow: hidden;
     width: 100%;
     position: relative;
@@ -154,12 +155,14 @@ footer p {
     white-space: nowrap;
     animation: kayma 20s linear infinite;
     width: max-content;
+     max-width: 100%; /* Kapsayıcıya göre genişliği sınırlayın */
 }
 
 .etkinlik-fotograflar img {
     width: 200px;
     height: auto;
     margin: 0 10px;
+    max-width: 100%; /* Fotoğrafların genişliğini sınırlayın */
 }
 
 @keyframes kayma {
