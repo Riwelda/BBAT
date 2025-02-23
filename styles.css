@@ -150,8 +150,8 @@ footer p {
 
  header .unilogo img,
     header .toplogo img {
-        width: 80px; /* Logoların genişliğini küçültüyoruz */
-        height: 60px; /* Logoların yüksekliğini küçültüyoruz */
+        width: 70px; /* Logoların genişliğini küçültüyoruz */
+        height: 70px; /* Logoların yüksekliğini küçültüyoruz */
     }
     header .unilogo {
         position: absolute;
@@ -172,14 +172,14 @@ footer p {
         display: flex;
         justify-content: center;
         margin: 30px 0;
-        margin-top: 35px; 
+        margin-top: 45px; 
     }
 
     .social-media {
         flex-direction: row;
         justify-content: center;
         gap: 15px;
-        margin-top: 45px;
+        margin-top: 55px;
     }
 
 
