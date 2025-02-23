@@ -149,13 +149,13 @@ footer p {
 
     header .unilogo {
         position: relative;
-        left: 0;
+        left: 10px;
         top: 10px;
     }
 
     header .toplogo {
         position: relative;
-        right: 0;
+        right: 10px;
         top: 10px;
     }
 
