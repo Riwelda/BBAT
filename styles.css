@@ -70,6 +70,13 @@ main {
     padding-bottom: 50px;
 }
 
+article {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 
 article h2 {
