@@ -54,40 +54,43 @@ h1 {
 /* Sosyal medya simgeleri */
 .social-media {
     position: absolute;
-    top: 85px;
+    top: 85px; /* Konumunu yukarı/aşağı taşımak için değiştirin */
     width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    justify-content: flex-start; /* İkonları sola hizalamak için */
+    gap: 40px; /* İkonlar arasındaki mesafeyi ayarlayın */
     padding: 0 20px;
+    margin-left: -30px; /* Sola kaydırmak için margin ekleyebilirsiniz */
 }
 
 .social-icon {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: #ff6347;
+    width: 50px;   /* Arka planın genişliği */
+    height: 50px;  /* Arka planın yüksekliği */
+    border-radius: 55%;  /* Yuvarlak şekil */
+    background-color: #ff6347;  /* Turuncu arka plan rengi */
     display: flex;
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s ease;
+    margin-right: 10px;  /* İkonlar arasındaki mesafeyi ayarlayın */
 }
 
 .social-icon:hover {
-    background-color: #ff4500;
+    background-color: #ff4500;  /* Hover durumunda arka plan rengi */
 }
 
 .social-icon img {
-    width: 100%;
-    height: 100%;
+    width: 50%;   /* İkonun boyutunu küçültmek için % ile ayarlayın */
+    height: 50%;
     object-fit: contain;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .social-icon:hover img {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Hoverda büyütme */
     filter: brightness(1.2);
 }
+
 
 /* İçerik ve fotoğraf */
 main {
