@@ -1,71 +1,92 @@
-
-
+/* Genel stil ayarları */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 
+/* Başlık (Header) */
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333;
+    background: linear-gradient(45deg, #004d6a, #66b3cc); /* Gradyan arka plan */
     color: white;
     padding: 37px 0;
     position: relative;
+    animation: fadeIn 1.5s ease-out;
 }
 
 header .unilogo {
     position: absolute;
-    left: 50px; /* Sol üst köşe */
+    left: 50px;
     top: 20px;
 }
 
 header .toplogo {
     position: absolute;
-    right: 50px; /* Sağ üst köşe */
+    right: 50px;
     top: 20px;
 }
 
-header .unilogo img, header .toplogo img {
-    height: 100px; /* Yükseklik 100px yapıldı */
-    width: 100px; /* Yükseklik ve genişlik eşit oldu */
+header .unilogo img,
+header .toplogo img {
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
     object-fit: cover;
-    border: none; /* Çerçeveyi kaldırıyoruz */
-    outline: none; /* Dış çerçeveyi engelliyoruz */
+    border: none;
+    outline: none;
 }
 
 h1 {
     position: relative;
-    top: -10px; /* 10 piksel yukarı taşı */
+    top: -10px;
     font-size: 24px;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Sosyal medya simgelerinin düzenini başlık altına yerleştirme */
+/* Sosyal medya simgeleri */
 .social-media {
     position: absolute;
-    top: 85px; /* Başlığın hemen altına taşıdık */
+    top: 85px;
     width: 100%;
     display: flex;
-    justify-content: center; /* Ortaya hizalama */
-    gap: 40px; /* Sosyal simgeler arasına mesafe ekleme */
+    justify-content: center;
+    gap: 40px;
     padding: 0 20px;
 }
 
 .social-icon {
-    width: 27px; /* Simge boyutunu büyütüyoruz */
-    height: 27px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #ff6347;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #ff4500;
 }
 
 .social-icon img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
+
+.social-icon:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* İçerik ve fotoğraf */
 main {
     width: 80%;
     margin: 20px auto;
@@ -80,44 +101,20 @@ article {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
-.photo-strip {
-    width: 100%; /* Konteyneri ekran genişliği kadar yapar */
-    overflow: hidden; /* Fotoğraf taşarsa gizlenmesini sağlar */
+article h2 {
+    color: #ff6347;
+    border-bottom: 2px solid #ff6347;
+    padding-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .photo-strip img {
-    width: 100%; /* Fotoğrafı genişlik olarak konteynere uyacak şekilde yapar */
-    height: auto; /* Yüksekliği, genişliğe orantılı olarak ayarlanır */
-    object-fit: cover; /* Fotoğrafın, konteyneri tamamen kaplamasını sağlar, gerekirse kesilebilir */
-}
-
-
-article h2 {
-    margin-top: 0;
-}
-
-.meta {
-    font-size: 0.9em;
-    color: #666;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
     width: 100%;
-    height: 25px;
+    height: auto;
+    object-fit: cover;
 }
 
-footer p {
-    margin: 0;
-}
-
-/* Etkinlikler kısmındaki kayan fotoğraflar */
+/* Etkinlik Fotoğrafları */
 .etkinlik-container {
     overflow: hidden;
     width: 100%;
@@ -135,6 +132,12 @@ footer p {
     width: 200px;
     height: auto;
     margin: 0 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.etkinlik-fotograflar img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes kayma {
@@ -146,9 +149,24 @@ footer p {
     }
 }
 
-/* Mobil uyumluluk */
+/* Footer */
+footer {
+    background-color: #004d6a;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Mobil uyumlu tasarım */
 @media screen and (max-width: 768px) {
-    /* Mobilde başlık ve logoları dikey hizala */
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -156,39 +174,24 @@ footer p {
 
     header .unilogo img,
     header .toplogo img {
-        width: 70px; /* Logoların genişliğini küçültüyoruz */
-        height: 70px; /* Logoların yüksekliğini küçültüyoruz */
-    }
-
-    header .unilogo {
-        position: absolute;
-        left: 10px;
-        top: 10px;
-    }
-
-    header .toplogo {
-        position: absolute;
-        right: 10px;
-        top: 10px;
+        width: 70px;
+        height: 70px;
     }
 
     h1 {
         font-size: 20px;
-        text-align: center; /* Mobilde ortalama */
+        text-align: center;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        margin: 30px 0;
-        margin-top: 70px; 
+        margin-top: 70px;
     }
 
     .social-media {
-    display: flex;
-    flex-direction: row; /* Yatay sıralama */
-    gap: 15px; /* Öğeler arasındaki boşluk */
-    margin-top: 87px;
-    margin-left: -20px; /* Sol margin'i sıfırla */
-}
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        margin-top: 87px;
+        margin-left: -20px;
+    }
 
     main {
         width: 90%;
@@ -198,5 +201,15 @@ footer p {
         position: relative;
         height: auto;
         padding: 15px 0;
+    }
+}
+
+/* Fade-in animation for header */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
