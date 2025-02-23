@@ -73,10 +73,10 @@ main {
 
 .photo-strip {
     width: 100%; /* Görselin genişliği ekranın tamamını kaplasın */
-    overflow: hidden; /* Görselin dışa taşmasını engeller */
+    
     position: relative;
     height: 200px; /* Şeridin yüksekliği */
-    margin-bottom: 50px; /* Altındaki article ile arasına boşluk ekler */
+    margin-bottom: 20px; /* Altındaki article ile arasına boşluk ekler */
 }
 
 .photo-strip img {
