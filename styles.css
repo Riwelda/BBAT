@@ -84,8 +84,6 @@ main {
     object-fit: cover; /* Görselin boyutlarını koruyarak uygun şekilde kesilmesini sağlar */
 }
 
-
-
 article {
     background-color: #fff;
     padding: 20px;
