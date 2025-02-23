@@ -150,7 +150,7 @@ footer p {
  header .unilogo img,
     header .toplogo img {
         width: 70px; /* Logoların genişliğini küçültüyoruz */
-        height: 70px; /* Logoların yüksekliğini küçültüyoruz */
+        height: 67px; /* Logoların yüksekliğini küçültüyoruz */
     }
     header .unilogo {
         position: absolute;
