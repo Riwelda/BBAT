@@ -87,14 +87,28 @@ main {
 
 .mission-vision-container {
     display: flex;
-    justify-content: space-between; /* İki öğe arasına boşluk koy */
+    flex-direction: row; /* Yatay hizalama sağlıyor */
+    justify-content: space-between; /* İki öğe arasına mesafe bırakır */
     align-items: flex-start;
-    gap: 20px; /* Aralarındaki mesafe */
+    gap: 20px; /* Ögeler arasındaki mesafe */
     width: 100%;
+    max-width: 1200px; /* Çok geniş ekranlarda fazla yayılmasını engeller */
+    margin: 0 auto; /* Ortalamak için */
 }
 
 .mission, .vision {
-    width: 48%; /* Eşit genişlikte olmaları için */
+    flex: 1; /* Eşit genişlikte olmasını sağlar */
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Masaüstünde hizalamayı garantilemek için */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* İçerikleri ortalamak için */
 }
 
 
