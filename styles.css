@@ -76,6 +76,7 @@ main {
     overflow: hidden; /* Görselin dışa taşmasını engeller */
     position: relative;
     height: 200px; /* Şeridin yüksekliği */
+    margin-bottom: 50px; /* Altındaki article ile arasına boşluk ekler */
 }
 
 .photo-strip img {
