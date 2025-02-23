@@ -85,20 +85,16 @@ main {
     object-fit: cover; /* Görselin boyutlarını koruyarak uygun şekilde kesilmesini sağlar */
 }
 
-.mission-vision {
+.mission-vision-container {
     display: flex;
-    flex-direction: row; /* Yan yana sıralamak için */
-    justify-content: space-between;
-    align-items: flex-start; /* Üst hizalama */
-    gap: 20px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: space-between; /* İki öğe arasına boşluk koy */
+    align-items: flex-start;
+    gap: 20px; /* Aralarındaki mesafe */
+    width: 100%;
 }
 
 .mission, .vision {
-    width: 48%; /* İç içe girmemesi için biraz boşluk bırak */
+    width: 48%; /* Eşit genişlikte olmaları için */
 }
 
 
@@ -190,11 +186,12 @@ footer p {
         top: 10px;
     }
 
-/* Mobil uyumluluk için */
+/* Mobil uyumluluk */
 @media screen and (max-width: 768px) {
-    .mission-vision {
-        flex-direction: column; /* Mobilde alt alta sıralama */
+    .mission-vision-container {
+        flex-direction: column; /* Küçük ekranlarda alt alta diz */
     }
+
     .mission, .vision {
         width: 100%;
     }
