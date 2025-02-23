@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -11,7 +12,7 @@ header {
     align-items: center;
     background-color: #333;
     color: white;
-    padding: 47px 0;
+    padding: 37px 0;
     position: relative;
 }
 
@@ -68,20 +69,6 @@ main {
     width: 80%;
     margin: 20px auto;
     padding-bottom: 50px;
-}
-
-.photo-strip {
-    width: 100%; /* Görselin genişliği ekranın tamamını kaplasın */
-    overflow: hidden; /* Görselin dışa taşmasını engeller */
-    position: relative;
-    height: 200px; /* Şeridin yüksekliği */
-   
-}
-
-.photo-strip img {
-    width: 100%; /* Görseli genişlik olarak tam ekran yapar */
-    height: 100%; /* Yüksekliği de tam ekran yapar */
-    object-fit: cover; /* Görselin boyutlarını koruyarak uygun şekilde kesilmesini sağlar */
 }
 
 article {
