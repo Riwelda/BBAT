@@ -133,15 +133,14 @@ footer p {
 
 @media screen and (min-width: 769px) {
     .social-media { 
-        position: absolute; /* Bu öğe, .contact-text için referans olacak */
+        position: absolute;
     }
-
-    .contact-text {
+  .contact-text {
         color: white; 
         line-height: 1.6;
         position: absolute;
         top: 0; /* Vertical olarak hizalama */
-        left: 50px; /* Mail simgesine yakınlaştırma */
+        left: 110px; /* Mail simgesine yakınlaştırma */
     }
 }
 
