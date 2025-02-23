@@ -151,10 +151,10 @@ footer p {
     max-width: 100%; /* Kapsayıcıyı ekranın dışına taşmaması için sınırla */
 }
 
-/* Etkinlik fotoğraflarını inline-block olarak hizalayalım */
+/* Etkinlik fotoğraflarını flex düzeniyle hizalayalım */
 .etkinlik-fotograflar {
-    display: block; /* flex yerine block yapıyoruz */
-    white-space: nowrap;
+    display: flex; /* Yatayda fotoğrafların sıralanmasını sağlar */
+    white-space: nowrap; /* Yatayda taşma engellenir */
     animation: kayma 20s linear infinite;
     width: auto; /* Genişlik otomatik */
     max-width: 100%; /* Genişliği %100 ile sınırlıyoruz */
@@ -162,7 +162,6 @@ footer p {
 
 /* Fotoğrafların boyutlarını belirleyelim */
 .etkinlik-fotograflar img {
-    display: inline-block; /* Fotoğraflar inline-block olarak hizalanacak */
     width: 200px; /* Fotoğrafların genişliği */
     height: auto;
     margin: 0 10px; /* Fotoğraflar arasına boşluk ekleniyor */
@@ -181,9 +180,14 @@ footer p {
 /* Mobil uyum için ekstra düzenlemeler */
 @media screen and (max-width: 768px) {
     /* Etkinlik fotoğraflarını mobilde daha geniş yapalım */
-    .etki
+    .etkinlik-fotograflar {
+        width: auto; /* Mobilde otomatik genişlik */
+    }
 
-
+    .etkinlik-fotograflar img {
+        width: 150px; /* Mobilde fotoğrafların boyutunu küçültüyoruz */
+    }
+}
 
 /* Mobil uyumluluk */
 @media screen and (max-width: 768px) {
