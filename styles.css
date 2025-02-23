@@ -168,6 +168,30 @@ footer p {
 
 
 
+
+
+@media screen and (max-width: 768px) {
+    /* Mobilde sosyal medya simgelerinin boyutunu küçültüyoruz */
+    .social-icon img {
+        width: 18px;  /* Küçük boyut */
+        height: 18px;
+    }
+
+    /* Sosyal medya simgelerinin arka planını yukarı taşıyoruz */
+    .social-media {
+        position: absolute;
+        top: 60px; /* Yukarıya taşıma */
+        display: flex;
+        justify-content: center;
+        gap: 20px;  /* Aralarındaki mesafeyi biraz küçültüyoruz */
+        margin-left: -20px; /* Sol margin'i sıfırlıyoruz */
+    }
+}
+
+
+
+
+
 /* Mobil uyumlu tasarım */
 @media screen and (max-width: 768px) {
     header {
