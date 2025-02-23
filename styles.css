@@ -52,36 +52,39 @@ h1 {
 
 
 /* Sosyal medya simgeleri */
+/* Sosyal medya simgeleri */
 .social-media {
     position: absolute;
-    top: 85px; /* Konumunu yukarı/aşağı taşımak için değiştirin */
+    top: 85px; /* Yukarı kaydırma */
     width: 100%;
     display: flex;
-    justify-content: flex-start; /* İkonları sola hizalamak için */
-    gap: 40px; /* İkonlar arasındaki mesafeyi ayarlayın */
+    justify-content: flex-start; /* Sola hizalama */
+    gap: 20px; /* İkonlar arasındaki mesafeyi azaltma */
     padding: 0 20px;
-    margin-left: -30px; /* Sola kaydırmak için margin ekleyebilirsiniz */
+    margin-left: -40px; /* Sola kaydırmak için */
 }
 
+/* Sosyal medya simgesi */
 .social-icon {
-    width: 50px;   /* Arka planın genişliği */
-    height: 50px;  /* Arka planın yüksekliği */
-    border-radius: 55%;  /* Yuvarlak şekil */
+    width: 40px;   /* Yuvarlak arka planı küçültme */
+    height: 40px;  /* Yuvarlak arka planı küçültme */
+    border-radius: 50%;  /* Yuvarlak şekil */
     background-color: #ff6347;  /* Turuncu arka plan rengi */
     display: flex;
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s ease;
-    margin-right: 10px;  /* İkonlar arasındaki mesafeyi ayarlayın */
+    margin-right: 10px;  /* İkonlar arasındaki mesafe */
 }
 
 .social-icon:hover {
-    background-color: #ff4500;  /* Hover durumunda arka plan rengi */
+    background-color: #ff4500;  /* Hover durumunda renk değişimi */
 }
 
+/* Sosyal medya simgesi içerisindeki ikon */
 .social-icon img {
-    width: 50%;   /* İkonun boyutunu küçültmek için % ile ayarlayın */
-    height: 50%;
+    width: 55%;   /* İkonu küçültme */
+    height: 55%;
     object-fit: contain;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
