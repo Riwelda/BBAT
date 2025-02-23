@@ -169,12 +169,13 @@ footer p {
     }
 
     .social-media {
-        flex-direction: row;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 87px;
-        margin-left: 9px;
-    }
+    display: flex;
+    flex-direction: row; /* Yatay sıralama */
+    justify-content: flex-start; /* Öğeleri sola hizala */
+    gap: 15px; /* Öğeler arasındaki boşluk */
+    margin-top: 87px;
+    margin-left: 0; /* Sol margin'i sıfırla */
+}
 
     main {
         width: 90%;
