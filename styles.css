@@ -136,7 +136,7 @@ footer p {
         color: white; 
         margin-left: 21px; 
         line-height: 1.6;
-        position: absolute;
+        position: relative;
         left: 21; /* Öğeyi sola taşıyoruz */
     }
 }
