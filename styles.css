@@ -58,7 +58,7 @@ h1 {
     top: 85px; /* Yukarı kaydırma */
     width: 100%;
     display: flex;
-    justify-content: flex-start; /* Sola hizalama */
+   
     gap: 20px; /* İkonlar arasındaki mesafeyi azaltma */
     padding: 0 20px;
     margin-left: -40px; /* Sola kaydırmak için */
