@@ -134,7 +134,7 @@ footer p {
 @media screen and (min-width: 769px) {
     .contact-text {
         color: white; 
-        margin-left: 17px; 
+        margin-left: 21px; 
         line-height: 1.6;
         position: absolute;
         left: 21; /* Öğeyi sola taşıyoruz */
