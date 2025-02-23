@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -65,6 +64,7 @@ h1 {
     height: 100%;
     object-fit: contain;
 }
+
 main {
     width: 80%;
     margin: 20px auto;
@@ -134,26 +134,28 @@ footer p {
 
 
 /* Mobil uyumluluk */
+@media screen and (max-width: 768px) {
+    /* Mobilde başlık ve logoları dikey hizala */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-@media screen and (max-width: 768px)
-
-{ flex-direction: column; /* Mobilde başlık ve logoları dikey hizala */
- }
-
- header .unilogo img,
+    header .unilogo img,
     header .toplogo img {
         width: 70px; /* Logoların genişliğini küçültüyoruz */
         height: 70px; /* Logoların yüksekliğini küçültüyoruz */
     }
+
     header .unilogo {
-        position: absolute;
-        left: 10px;
+        position: relative;
+        left: 0;
         top: 10px;
     }
 
     header .toplogo {
-        position: absolute;
-        right: 10px;
+        position: relative;
+        right: 0;
         top: 10px;
     }
 
