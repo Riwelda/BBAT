@@ -82,10 +82,18 @@ h1 {
     transition: all 0.3s ease; /* Hover efektini daha yumuşak yapar */
 }
 
-.social-icon img:hover {
-    filter: grayscale(0%) invert(0%); /* Hover sırasında renkli görünmesini sağlar */
+/* Instagram logosu üzerine özel efekt */
+#instagram img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) invert(100%); /* Siyah beyaz ve ters renk efekti */
+    transition: all 0.3s ease; /* Hover efektini daha yumuşak yapar */
 }
 
+#instagram img:hover {
+    filter: grayscale(0%) invert(0%); /* Hover sırasında renkli görünmesini sağlar */
+}
 
 /* İçerik ve fotoğraf */
 main {
