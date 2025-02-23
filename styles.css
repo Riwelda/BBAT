@@ -147,7 +147,7 @@ footer p {
 .etkinlik-container {
     overflow: hidden; /* Yatay taşmayı engelle */
     width: 100%; /* Kapsayıcıyı tam genişlikte yap */
-    position: relative;
+    position: absolute;
     max-width: 100%; /* Kapsayıcıyı ekranın dışına taşmaması için sınırla */
 }
 
