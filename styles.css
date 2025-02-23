@@ -143,42 +143,42 @@ footer p {
     margin: 0;
 }
 
-/* Etkinlikler kısmındaki kayan fotoğraflar */
+/* Etkinlik fotoğraflarının kaymasını sağlayan container */
 .etkinlik-container {
     overflow: hidden; /* Yatay taşmayı engelle */
     width: 100%; /* Kapsayıcıyı tam genişlikte yap */
     position: relative;
+    max-width: 100%; /* Kapsayıcıyı ekranın dışına taşmaması için sınırla */
 }
 
+/* Etkinlik fotoğraflarının esnek yapısını düzenleyelim */
 .etkinlik-fotograflar {
     display: flex;
     white-space: nowrap;
     animation: kayma 20s linear infinite;
-    width: 100%; /* Genişlik %100 yapıldı */
+    width: 100%; /* Bu şekilde taşma yapılmaz */
 }
 
+/* Fotoğrafların boyutlarını belirleyelim */
 .etkinlik-fotograflar img {
-    width: 200px; /* Her fotoğrafın genişliği 200px */
+    width: 200px; /* Fotoğrafların genişliği */
     height: auto;
     margin: 0 10px; /* Fotoğraflar arasına boşluk ekleniyor */
 }
 
-/* Animasyon: Fotoğrafların kaymasını sağla */
-@keyframes kayma {
-    from {
-        transform: translateX(0); /* Başlangıçta tam hizalanmış */
+/* Mobil uyum için ekstra düzenlemeler */
+@media screen and (max-width: 768px) {
+    /* Etkinlik fotoğraflarını mobilde daha geniş yapalım */
+    .etkinlik-fotograflar {
+        width: auto; /* Mobilde otomatik genişlik */
+        flex: 1 0 auto; /* Esneklik ayarı */
     }
-    to {
-        transform: translateX(-100%); /* Fotoğrafların tamamı ekranı kaydırarak geçecek */
+
+    .etkinlik-fotograflar img {
+        width: 150px; /* Mobilde fotoğrafların boyutunu küçültüyoruz */
     }
 }
 
-/* Mobil uyumluluk */
-@media screen and (max-width: 768px) {
-    .etkinlik-fotograflar {
-        width: 500%; /* Mobilde daha fazla kayma alanı veriyoruz */
-    }
-}
 
 
 /* Mobil uyumluluk */
