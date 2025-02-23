@@ -71,20 +71,33 @@ main {
     padding-bottom: 50px;
 }
 
-
-
-.photo-strip {
-    width: 100%; /* Görselin genişliği ekranın tamamını kaplasın */
-    position: relative;
-    height: 200px; /* Şeridin yüksekliği */
-    margin-bottom: 20px; /* Altındaki article ile arasına boşluk ekler */
+.mission-vision-container {
+    display: flex;
+    flex-direction: row; /* Yatay hizalama sağlıyor */
+    justify-content: space-between; /* İki öğe arasına mesafe bırakır */
+    align-items: flex-start;
+    gap: 20px; /* Ögeler arasındaki mesafe */
+    width: 100%;
+    max-width: 1200px; /* Çok geniş ekranlarda fazla yayılmasını engeller */
+    margin: 0 auto; /* Ortalamak için */
 }
 
-.photo-strip img {
-    width: 100%; /* Görseli genişlik olarak tam ekran yapar */
-    height: 100%; /* Yüksekliği de tam ekran yapar */
-    object-fit: cover; /* Görselin boyutlarını koruyarak uygun şekilde kesilmesini sağlar */
+.mission, .vision {
+    flex: 1; /* Eşit genişlikte olmasını sağlar */
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Masaüstünde hizalamayı garantilemek için */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* İçerikleri ortalamak için */
+}
+
+
 
 
 
