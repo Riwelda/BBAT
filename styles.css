@@ -131,12 +131,13 @@ footer p {
     }
 }
 
-/* Masaüstü için iletişim yazısının yüksekliğini ve sol boşluk miktarını ayarlama */
 @media screen and (min-width: 769px) {
     .contact-text {
         color: white; 
-        left: 3px; 
+        margin-left: 17px; 
         line-height: 1.6;
+        position: absolute;
+        left: 0; /* Öğeyi sola taşıyoruz */
     }
 }
 
