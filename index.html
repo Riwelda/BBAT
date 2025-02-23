@@ -1,90 +1,215 @@
+/* Genel stil ayarları */
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BBAT</title>
+/* Başlık (Header) */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #004d6a, #66b3cc); /* Gradyan arka plan */
+    color: white;
+    padding: 37px 0;
+    position: relative;
+    animation: fadeIn 1.5s ease-out;
+}
 
-<link rel="icon" href="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/pngikologo.png" type="image/png"> <!-- .ico uzantılı favicon -->
+header .unilogo {
+    position: absolute;
+    left: 50px;
+    top: 20px;
+}
 
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+header .toplogo {
+    position: absolute;
+    right: 50px;
+    top: 20px;
+}
 
-<header>
-    <div class="unilogo">
-        <img src="https://github.com/Riwelda/BBAT/blob/main/unilogo.jpg?raw=true" alt="unilogo">
-    </div>
-    <h1>BİYOLOJİK BİLİMLER ARAŞTIRMA TOPLULUĞU</h1>
-    <div class="toplogo"> <!-- pngikologo yerine toplogo -->
-        <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/pngikologo.png" alt="Üst Logo">
-    </div>
-</header>
+header .unilogo img,
+header .toplogo img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: none;
+    outline: none;
+}
 
+h1 {
+    position: relative;
+    top: -10px;
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
 
-<div class="social-media">
-    <a href="https://www.instagram.com/biyolojikbilimlerat" class="social-icon" id="instagram">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-    </a>
-    <a href="https://twitter.com/bbatkastamonu" class="social-icon" id="twitter">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="Twitter">
-    </a>
-    <a href="mail.to:alperymanay@gmail.com" class="social-icon" id="email">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Envelope_alt_font_awesome.svg" alt="Email">
-    </a>
-</div>
+/* Sosyal medya simgeleri */
+.social-media {
+    position: absolute;
+    top: 85px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 20px;
+}
 
-<main>
-    <div class="photo-strip">
-    <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/fenfak.jpeg" alt="Etkinlik Fotoğrafı">
-</div>
-    
-  <main>
-    <div class="mission-vision-container">
-        <article class="mission">
-            <h2>MİSYONUMUZ</h2>
-	<p class="meta">Yazar: Alper YAMAN | Tarih: 23 Şubat 2025</p>
-            <p>BBAT olarak amacımız, Kastamonu Üniversitesi öğrencilerine doğa bilimleri alanında kapsamlı bir eğitim sunarak bilimsel farkındalık kazandırmak, araştırma becerilerini geliştirmek ve doğaya yönelik bilinçli bir bakış açısı oluşturmaktır. Akademik ve saha çalışmalarıyla öğrencileri destekleyerek bilimsel keşiflere katkıda bulunmalarını sağlamak öncelikli hedefimizdir.</p>
-        </article>
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #ff6347;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
 
-        <article class="vision">
-            <h2>VİZYONUMUZ</h2>
-	<p class="meta">Yazar: Alper YAMAN | Tarih: 19 Şubat 2025</p>
-            <p>BBAT olarak, doğa bilimleri alanında yetkin, araştırmacı ruhlu ve çevreye duyarlı bireyler yetiştirerek Kastamonu Üniversitesi’nde bilimsel bilginin yaygınlaştırılmasına öncülük etmek istiyoruz. Doğa ve biyolojik bilimler alanında farkındalık oluşturarak, toplumsal ve çevresel sorunlara bilimsel çözümler üreten bir öğrenci topluluğu olmayı hedefliyoruz.</p>
-        </article>
-    </div>
-</main>
+.social-icon:hover {
+    background-color: #ff4500;
+}
 
-    
-    <article>
-        <h2>Etkinliklerimiz</h2>
-        <p class="meta">Yazar: Alper YAMAN | Tarih: 17 Şubat 2025</p>
-        <p>Mantar gezisi, Sözde bilim konferansı, Tanışma kahvaltımız, Çanakkale gezimiz, Bioinnovation 2024 yarışması...</p>
-        
-        <!-- Sonsuz kayan görseller için yeni yapı -->
-        <div class="etkinlik-container">
-            <div class="etkinlik-fotograflar">
-                <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/etk1.jpg" alt="Etkinlik 1">
-                <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/etk2.jpg" alt="Etkinlik 2">
-                <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/etk3.jpg" alt="Etkinlik 3">
-                <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/etk4.jpg" alt="Etkinlik 4">
-                <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/etk5.jpg" alt="Etkinlik 5">
-                
-                <!-- Görsellerin tekrar etmesi için ikinci set -->
-                <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/etk1.jpg" alt="Etkinlik 1">
-                <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/etk2.jpg" alt="Etkinlik 2">
-                <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/etk3.jpg" alt="Etkinlik 3">
-                <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/etk4.jpg" alt="Etkinlik 4">
-                <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/etk5.jpg" alt="Etkinlik 5">
-            </div>
-        </div>
-    </article>
-</main>
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
 
-<footer>
-    <p>&copy; 2024 BBAT. Tüm hakları saklıdır.</p>
-</footer>
+.social-icon:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
 
-</body>
-</html>
+/* İçerik ve fotoğraf */
+main {
+    width: 80%;
+    margin: 20px auto;
+    padding-bottom: 50px;
+}
+
+article {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+article h2 {
+    color: #ff6347;
+    border-bottom: 2px solid #ff6347;
+    padding-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.photo-strip img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Etkinlik Fotoğrafları */
+.etkinlik-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.etkinlik-fotograflar {
+    display: flex;
+    white-space: nowrap;
+    animation: kayma 20s linear infinite;
+    width: max-content;
+}
+
+.etkinlik-fotograflar img {
+    width: 200px;
+    height: auto;
+    margin: 0 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.etkinlik-fotograflar img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes kayma {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #004d6a;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Mobil uyumlu tasarım */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .unilogo img,
+    header .toplogo img {
+        width: 70px;
+        height: 70px;
+    }
+
+    h1 {
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+        margin-top: 70px;
+    }
+
+    .social-media {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        margin-top: 87px;
+        margin-left: -20px;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    footer {
+        position: relative;
+        height: auto;
+        padding: 15px 0;
+    }
+}
+
+/* Fade-in animation for header */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
