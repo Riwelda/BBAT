@@ -140,15 +140,20 @@ footer p {
 }
 
 /* Mobil uyumluluk */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px)
+ header .unilogo img,
+    header .toplogo img {
+        width: 60px; /* Logoların genişliğini küçültüyoruz */
+        height: 60px; /* Logoların yüksekliğini küçültüyoruz */
+    }
     header .unilogo {
-        left: 7px;
-        top: 7px;
+        left: 10px;
+        top: 10px;
     }
 
     header .toplogo {
-        right: 7px;
-        top: 7px;
+        right: 10px;
+        top: 10px;
     }
 
     h1 {
