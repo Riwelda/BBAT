@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    font-size: 36px; /* Başlık yazısının puntosunu 36px yapar */
 }
 
 /* Başlık (Header) */
