@@ -64,11 +64,6 @@ h1 {
     height: 100%;
     object-fit: contain;
 }
-
- .contact-text {
-    color: white; /* İletişim yazısının rengini beyaz yapıyoruz */
-}
-
 main {
     width: 80%;
     margin: 20px auto;
@@ -136,6 +131,14 @@ footer p {
     }
 }
 
+/* Masaüstü için iletişim yazısının yüksekliğini ve sol boşluk miktarını ayarlama */
+@media screen and (min-width: 769px) {
+    .contact-text {
+        color: white; 
+        margin-left: 20px; 
+        line-height: 1.6;
+    }
+}
 
 /* Mobil uyumluluk */
 @media screen and (max-width: 768px) {
