@@ -1,4 +1,5 @@
 
+
 /* Genel stil ayarları */
 body {
     font-family: 'Quicksand', sans-serif;
@@ -21,13 +22,13 @@ header {
 
 header .unilogo {
     position: absolute;
-    left: 70px;
+    left: 50px;
     top: 20px;
 }
 
 header .toplogo {
     position: absolute;
-    right: 70px;
+    right: 50px;
     top: 20px;
 }
 
@@ -90,14 +91,14 @@ h1 {
 /* İçerik ve fotoğraf */
 main {
     width: 80%;
-    margin: 30px auto;
+    margin: 20px auto;
     padding-bottom: 50px;
 }
 
 article {
     background-color: #fff;
     padding: 20px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -107,7 +108,6 @@ article h2 {
     border-bottom: 2px solid #ff6347;
     padding-bottom: 5px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 36px; /* Başlık yazısının puntosunu 36px yapar */
 }
 
 .photo-strip img {
