@@ -70,13 +70,7 @@ main {
     padding-bottom: 50px;
 }
 
-article {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+
 
 article h2 {
     margin-top: 0;
@@ -128,19 +122,6 @@ footer p {
     }
     to {
         transform: translateX(-50%);
-    }
-}
-
-@media screen and (min-width: 769px) {
-    .social-media { 
-        position: absolute;
-    }
-  .contact-text {
-        color: white; 
-        line-height: 1.6;
-        position: absolute;
-        top: 0; /* Vertical olarak hizalama */
-        left: 110px; /* Mail simgesine yakınlaştırma */
     }
 }
 
