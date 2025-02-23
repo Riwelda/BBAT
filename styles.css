@@ -65,50 +65,10 @@ h1 {
     height: 100%;
     object-fit: contain;
 }
-
 main {
     width: 80%;
     margin: 20px auto;
     padding-bottom: 50px;
-}
-
-.photo-strip {
-    width: 100%; /* Görselin genişliği ekranın tamamını kaplasın */
-    position: relative;
-    height: 200px; /* Şeridin yüksekliği */
-    margin-bottom: 20px; /* Altındaki article ile arasına boşluk ekler */
-}
-
-.photo-strip img {
-    width: 100%; /* Görseli genişlik olarak tam ekran yapar */
-    height: 100%; /* Yüksekliği de tam ekran yapar */
-    object-fit: cover; /* Görselin boyutlarını koruyarak uygun şekilde kesilmesini sağlar */
-}
-
-.mission-vision-container {
-    display: flex;
-    flex-direction: row; /* Yatay hizalama sağlıyor */
-    justify-content: space-between; /* İki öğe arasına mesafe bırakır */
-    align-items: flex-start;
-    gap: 20px; /* Ögeler arasındaki mesafe */
-    width: 100%;
-    max-width: 1200px; /* Çok geniş ekranlarda fazla yayılmasını engeller */
-    margin: 0 auto; /* Ortalamak için */
-}
-
-.mission, .vision {
-    flex: 1; /* Eşit genişlikte olmasını sağlar */
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Masaüstünde hizalamayı garantilemek için */
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* İçerikleri ortalamak için */
 }
 
 article {
@@ -118,6 +78,7 @@ article {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 
 article h2 {
     margin-top: 0;
@@ -143,49 +104,32 @@ footer p {
     margin: 0;
 }
 
-/* Etkinlik fotoğraflarının kaymasını sağlayan container */
+/* Etkinlikler kısmındaki kayan fotoğraflar */
 .etkinlik-container {
-    overflow: hidden; /* Yatay taşmayı engelle */
-    width: 100%; /* Kapsayıcıyı tam genişlikte yap */
+    overflow: hidden;
+    width: 100%;
     position: relative;
-    max-width: 100%; /* Kapsayıcıyı ekranın dışına taşmaması için sınırla */
 }
 
-/* Etkinlik fotoğraflarını flex düzeniyle hizalayalım */
 .etkinlik-fotograflar {
-    display: flex; /* Yatayda fotoğrafların sıralanmasını sağlar */
-    white-space: nowrap; /* Yatayda taşma engellenir */
+    display: flex;
+    white-space: nowrap;
     animation: kayma 20s linear infinite;
-    width: auto; /* Genişlik otomatik */
-    max-width: 100%; /* Genişliği %100 ile sınırlıyoruz */
+    width: max-content;
 }
 
-/* Fotoğrafların boyutlarını belirleyelim */
 .etkinlik-fotograflar img {
-    width: 200px; /* Fotoğrafların genişliği */
+    width: 200px;
     height: auto;
-    margin: 0 10px; /* Fotoğraflar arasına boşluk ekleniyor */
+    margin: 0 10px;
 }
 
-/* Animasyon: Fotoğrafların kaymasını sağla */
 @keyframes kayma {
     from {
-        transform: translateX(0); /* Başlangıçta tam hizalanmış */
+        transform: translateX(0);
     }
     to {
-        transform: translateX(-100%); /* Fotoğrafların tamamı ekranı kaydırarak geçecek */
-    }
-}
-
-/* Mobil uyum için ekstra düzenlemeler */
-@media screen and (max-width: 768px) {
-    /* Etkinlik fotoğraflarını mobilde daha geniş yapalım */
-    .etkinlik-fotograflar {
-        width: auto; /* Mobilde otomatik genişlik */
-    }
-
-    .etkinlik-fotograflar img {
-        width: 150px; /* Mobilde fotoğrafların boyutunu küçültüyoruz */
+        transform: translateX(-50%);
     }
 }
 
@@ -226,12 +170,12 @@ footer p {
     }
 
     .social-media {
-        display: flex;
-        flex-direction: row; /* Yatay sıralama */
-        gap: 15px; /* Öğeler arasındaki boşluk */
-        margin-top: 87px;
-        margin-left: -20px; /* Sol margin'i sıfırla */
-    }
+    display: flex;
+    flex-direction: row; /* Yatay sıralama */
+    gap: 15px; /* Öğeler arasındaki boşluk */
+    margin-top: 87px;
+    margin-left: -20px; /* Sol margin'i sıfırla */
+}
 
     main {
         width: 90%;
@@ -241,13 +185,5 @@ footer p {
         position: relative;
         height: auto;
         padding: 15px 0;
-    }
-
-    .mission-vision-container {
-        flex-direction: column; /* Küçük ekranlarda alt alta diz */
-    }
-
-    .mission, .vision {
-        width: 100%;
     }
 }
