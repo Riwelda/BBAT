@@ -150,7 +150,7 @@ footer p {
  header .unilogo img,
     header .toplogo img {
         width: 70px; /* Logoların genişliğini küçültüyoruz */
-        height: 67px; /* Logoların yüksekliğini küçültüyoruz */
+        height: 70px; /* Logoların yüksekliğini küçültüyoruz */
     }
     header .unilogo {
         position: absolute;
@@ -179,11 +179,8 @@ footer p {
         justify-content: center;
         gap: 15px;
         margin-top: 55px;
+        color: #333;
     }
-.contact-text {
-    font-size: 18px;
-    color: #333;
-    margin-left: 10px;
 
 
     main {
