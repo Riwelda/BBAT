@@ -85,14 +85,28 @@ main {
     object-fit: cover; /* Görselin boyutlarını koruyarak uygun şekilde kesilmesini sağlar */
 }
 
+.mission-vision {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-article {
+.mission, .vision {
+    width: 50%;
+}
+
+
+article {    /*burası silinebilir mi kontrol et*/
     background-color: #fff;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+}  /*buraya kadar*/
 
 
 article h2 {
