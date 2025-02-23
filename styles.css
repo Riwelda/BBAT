@@ -80,6 +80,18 @@ article {
 }
 
 
+.photo-strip {
+    width: 100%; /* Konteyneri ekran genişliği kadar yapar */
+    overflow: hidden; /* Fotoğraf taşarsa gizlenmesini sağlar */
+}
+
+.photo-strip img {
+    width: 100%; /* Fotoğrafı genişlik olarak konteynere uyacak şekilde yapar */
+    height: auto; /* Yüksekliği, genişliğe orantılı olarak ayarlanır */
+    object-fit: cover; /* Fotoğrafın, konteyneri tamamen kaplamasını sağlar, gerekirse kesilebilir */
+}
+
+
 article h2 {
     margin-top: 0;
 }
