@@ -1,3 +1,4 @@
+
 /* Genel stil ayarları */
 body {
     font-family: 'Quicksand', sans-serif;
@@ -78,21 +79,12 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: grayscale(100%) invert(100%); /* Siyah beyaz ve ters renk efekti */
-    transition: all 0.3s ease; /* Hover efektini daha yumuşak yapar */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Instagram logosu üzerine özel efekt */
-#instagram img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: grayscale(100%) invert(100%); /* Siyah beyaz ve ters renk efekti */
-    transition: all 0.3s ease; /* Hover efektini daha yumuşak yapar */
-}
-
-#instagram img:hover {
-    filter: grayscale(0%) invert(0%); /* Hover sırasında renkli görünmesini sağlar */
+.social-icon:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
 /* İçerik ve fotoğraf */
@@ -174,13 +166,6 @@ footer p {
     margin: 0;
 }
 
-/* Mobil uyumlu sosyal medya simgeleri */
-@media screen and (max-width: 768px) {
-    .social-icon {
-        width: 35px;
-        height: 35px;
-    }
-}
 /* Mobil uyumlu tasarım */
 @media screen and (max-width: 768px) {
     header {
