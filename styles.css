@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,7 +14,6 @@ header {
     color: white;
     padding: 37px 0;
     position: relative;
-    max-width: 100%; /* Genişlik sınırı ekledik */
 }
 
 header .unilogo {
@@ -70,9 +70,6 @@ main {
     width: 80%;
     margin: 20px auto;
     padding-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* İçerikleri ortalamak için */
 }
 
 .photo-strip {
@@ -107,6 +104,13 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Masaüstünde hizalamayı garantilemek için */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* İçerikleri ortalamak için */
+}
+
 article {
     background-color: #fff;
     padding: 20px;
@@ -129,9 +133,10 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: relative; /* Footer'ın alt kısımda sabit olmasını engelledik */
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    height: auto; /* Dinamik yükseklik */
+    height: 25px;
 }
 
 footer p {
@@ -140,8 +145,8 @@ footer p {
 
 /* Etkinlikler kısmındaki kayan fotoğraflar */
 .etkinlik-container {
-    overflow: hidden;
-    width: 100%;
+    overflow: hidden; /* Yatay taşmayı engelle */
+    width: 100%; /* Kapsayıcıyı tam genişlikte yap */
     position: relative;
 }
 
@@ -149,23 +154,32 @@ footer p {
     display: flex;
     white-space: nowrap;
     animation: kayma 20s linear infinite;
-    width: max-content;
+    width: 100%; /* Genişlik %100 yapıldı */
 }
 
 .etkinlik-fotograflar img {
-    width: 200px;
+    width: 200px; /* Her fotoğrafın genişliği 200px */
     height: auto;
-    margin: 0 10px;
+    margin: 0 10px; /* Fotoğraflar arasına boşluk ekleniyor */
 }
 
+/* Animasyon: Fotoğrafların kaymasını sağla */
 @keyframes kayma {
     from {
-        transform: translateX(0);
+        transform: translateX(0); /* Başlangıçta tam hizalanmış */
     }
     to {
-        transform: translateX(-50%);
+        transform: translateX(-100%); /* Fotoğrafların tamamı ekranı kaydırarak geçecek */
     }
 }
+
+/* Mobil uyumluluk */
+@media screen and (max-width: 768px) {
+    .etkinlik-fotograflar {
+        width: 500%; /* Mobilde daha fazla kayma alanı veriyoruz */
+    }
+}
+
 
 /* Mobil uyumluluk */
 @media screen and (max-width: 768px) {
@@ -174,7 +188,6 @@ footer p {
         flex-direction: column;
         align-items: flex-start;
     }
-
 
     header .unilogo img,
     header .toplogo img {
@@ -201,7 +214,7 @@ footer p {
         display: flex;
         justify-content: center;
         margin: 30px 0;
-        margin-top: 70px;
+        margin-top: 70px; 
     }
 
     .social-media {
@@ -228,10 +241,5 @@ footer p {
 
     .mission, .vision {
         width: 100%;
-    }
-
-    /* Etkinlik fotoğraflarının kayma alanını mobilde ayarladık */
-    .etkinlik-fotograflar {
-        width: 500%; /* Mobilde daha fazla kayma alanı veriyoruz */
     }
 }
