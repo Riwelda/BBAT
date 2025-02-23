@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -65,6 +64,7 @@ h1 {
     height: 100%;
     object-fit: contain;
 }
+
 main {
     width: 80%;
     margin: 20px auto;
@@ -73,7 +73,6 @@ main {
 
 .photo-strip {
     width: 100%; /* Görselin genişliği ekranın tamamını kaplasın */
-    
     position: relative;
     height: 200px; /* Şeridin yüksekliği */
     margin-bottom: 20px; /* Altındaki article ile arasına boşluk ekler */
@@ -111,15 +110,13 @@ main {
     align-items: center; /* İçerikleri ortalamak için */
 }
 
-
-article {    /*burası silinebilir mi kontrol et*/
+article {
     background-color: #fff;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}  /*buraya kadar*/
-
+}
 
 article h2 {
     margin-top: 0;
@@ -147,22 +144,29 @@ footer p {
 
 /* Etkinlikler kısmındaki kayan fotoğraflar */
 .etkinlik-container {
-    overflow: hidden;
     width: 100%;
-    position: relative;
+    max-width: 1200px; /* Çok geniş ekranlarda taşmayı önler */
+    margin: 0 auto;
+    overflow: hidden; /* Taşmayı engelle */
+    box-sizing: border-box;
 }
 
 .etkinlik-fotograflar {
     display: flex;
-    white-space: nowrap;
-    animation: kayma 20s linear infinite;
-    width: max-content;
+    flex-wrap: nowrap;
+    justify-content: center; /* Ortaya hizala */
+    gap: 10px; /* Fotoğraflar arasındaki mesafe */
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto; /* Yatay kaydırmayı etkinleştir */
+    scroll-snap-type: x mandatory; /* Mobilde düzgün kayma sağla */
 }
 
 .etkinlik-fotograflar img {
     width: 200px;
     height: auto;
     margin: 0 10px;
+    scroll-snap-align: center; /* Kaydırma sırasında hizalama */
 }
 
 @keyframes kayma {
@@ -200,19 +204,6 @@ footer p {
         top: 10px;
     }
 
-/* Mobil uyumluluk */
-@media screen and (max-width: 768px) {
-    .mission-vision-container {
-        flex-direction: column; /* Küçük ekranlarda alt alta diz */
-    }
-
-    .mission, .vision {
-        width: 100%;
-    }
-}
-
-    
-
     h1 {
         font-size: 20px;
         text-align: center; /* Mobilde ortalama */
@@ -224,12 +215,12 @@ footer p {
     }
 
     .social-media {
-    display: flex;
-    flex-direction: row; /* Yatay sıralama */
-    gap: 15px; /* Öğeler arasındaki boşluk */
-    margin-top: 87px;
-    margin-left: -20px; /* Sol margin'i sıfırla */
-}
+        display: flex;
+        flex-direction: row; /* Yatay sıralama */
+        gap: 15px; /* Öğeler arasındaki boşluk */
+        margin-top: 87px;
+        margin-left: -20px; /* Sol margin'i sıfırla */
+    }
 
     main {
         width: 90%;
@@ -239,5 +230,13 @@ footer p {
         position: relative;
         height: auto;
         padding: 15px 0;
+    }
+
+    .mission-vision-container {
+        flex-direction: column; /* Küçük ekranlarda alt alta diz */
+    }
+
+    .mission, .vision {
+        width: 100%;
     }
 }
