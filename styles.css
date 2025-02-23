@@ -79,12 +79,12 @@ main {
     width: 100%;
     height: auto;
     object-fit: cover;
-    cursor: pointer; /* Tıklanabilir hale getiriyoruz */
-    transition: transform 0.3s ease-in-out; /* Geçiş efekti ekliyoruz */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
 .photo-strip img:hover {
-    transform: scale(1.2); /* Fotoğrafı hover ile büyütme */
+    transform: scale(1.2);
 }
 
 footer {
@@ -102,7 +102,34 @@ footer p {
     margin: 0;
 }
 
-/* Mobil uyumluluk */
+.etkinlik-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.etkinlik-fotograflar {
+    display: flex;
+    white-space: nowrap;
+    animation: kayma 20s linear infinite;
+    width: max-content;
+}
+
+.etkinlik-fotograflar img {
+    width: 200px;
+    height: auto;
+    margin: 0 10px;
+}
+
+@keyframes kayma {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 @media screen and (max-width: 768px) {
     header {
         flex-direction: column;
@@ -139,16 +166,4 @@ footer p {
         flex-direction: row;
         gap: 15px;
         margin-top: 87px;
-        margin-left: -20px;
-    }
-
-    main {
-        width: 90%;
-    }
-
-    footer {
-        position: relative;
-        height: auto;
-        padding: 15px 0;
-    }
-}
+        margin-left: -20px
