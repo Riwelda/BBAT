@@ -66,8 +66,8 @@ h1 {
 }
 
  .contact-text {
-    color: #333;   
-    }
+    color: white; /* İletişim yazısının rengini beyaz yapıyoruz */
+}
 
 main {
     width: 80%;
