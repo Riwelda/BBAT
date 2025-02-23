@@ -79,23 +79,6 @@ main {
     margin-bottom: 20px; /* Fotoğraf ile altındaki metin arasında boşluk */
 }
 
-.photo-strip img {
-    width: 100%;
-    height: auto;
-    animation: scroll 10s linear infinite;
-}
-
-@keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-
-
 article {
     background-color: #fff;
     padding: 20px;
