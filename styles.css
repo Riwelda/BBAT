@@ -139,19 +139,28 @@ footer p {
     }
 }
 
+
+
 /* Mobil uyumluluk */
+
 @media screen and (max-width: 768px)
+
+{ flex-direction: column; /* Mobilde başlık ve logoları dikey hizala */
+ }
+
  header .unilogo img,
     header .toplogo img {
         width: 60px; /* Logoların genişliğini küçültüyoruz */
         height: 60px; /* Logoların yüksekliğini küçültüyoruz */
     }
     header .unilogo {
+        position: absolute;
         left: 10px;
         top: 10px;
     }
 
     header .toplogo {
+        position: absolute;
         right: 10px;
         top: 10px;
     }
@@ -162,6 +171,7 @@ footer p {
         width: 100%;
         display: flex;
         justify-content: center;
+        margin: 30px 0;
     }
 
     .social-media {
@@ -170,6 +180,10 @@ footer p {
         gap: 15px;
         margin-top: 10px;
     }
+
+.social-icon {
+        width: 25px; /* Genişlik */
+        height: 25px; /* Yükseklik */
 
     main {
         width: 90%;
