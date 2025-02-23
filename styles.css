@@ -173,14 +173,14 @@ footer p {
 @media screen and (max-width: 768px) {
     /* Mobilde sosyal medya simgelerinin boyutunu küçültüyoruz */
     .social-icon img {
-        width: 20px;  /* Küçük boyut */
-        height: 20px;
+        width: 22px;  /* Küçük boyut */
+        height: 22px;
     }
 
 /* Sosyal medya simgelerinin turuncu arka planını küçültüyoruz */
     .social-icon {
-        width: 30px;   /* Arka planın genişliğini küçültüyoruz */
-        height: 30px;  /* Arka planın yüksekliğini küçültüyoruz */
+        width: 26px;   /* Arka planın genişliğini küçültüyoruz */
+        height: 26px;  /* Arka planın yüksekliğini küçültüyoruz */
         padding: 5px;  /* İçeriye biraz boşluk ekliyoruz */
     }
 
@@ -188,7 +188,7 @@ footer p {
     /* Sosyal medya simgelerinin arka planını yukarı taşıyoruz */
     .social-media {
         position: absolute;
-        top: 67px; /* Yukarıya taşıma */
+        top: 70px; /* Yukarıya taşıma */
         display: flex;
         justify-content: center;
         gap: 24px;  /* Aralarındaki mesafeyi biraz küçültüyoruz */
