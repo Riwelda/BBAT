@@ -147,37 +147,41 @@ footer p {
 .etkinlik-container {
     overflow: hidden; /* Yatay taşmayı engelle */
     width: 100%; /* Kapsayıcıyı tam genişlikte yap */
-    position: absolute;
+    position: relative;
     max-width: 100%; /* Kapsayıcıyı ekranın dışına taşmaması için sınırla */
 }
 
-/* Etkinlik fotoğraflarının esnek yapısını düzenleyelim */
+/* Etkinlik fotoğraflarını inline-block olarak hizalayalım */
 .etkinlik-fotograflar {
-    display: flex;
+    display: block; /* flex yerine block yapıyoruz */
     white-space: nowrap;
     animation: kayma 20s linear infinite;
-    width: 100%; /* Bu şekilde taşma yapılmaz */
+    width: auto; /* Genişlik otomatik */
+    max-width: 100%; /* Genişliği %100 ile sınırlıyoruz */
 }
 
 /* Fotoğrafların boyutlarını belirleyelim */
 .etkinlik-fotograflar img {
+    display: inline-block; /* Fotoğraflar inline-block olarak hizalanacak */
     width: 200px; /* Fotoğrafların genişliği */
     height: auto;
     margin: 0 10px; /* Fotoğraflar arasına boşluk ekleniyor */
 }
 
+/* Animasyon: Fotoğrafların kaymasını sağla */
+@keyframes kayma {
+    from {
+        transform: translateX(0); /* Başlangıçta tam hizalanmış */
+    }
+    to {
+        transform: translateX(-100%); /* Fotoğrafların tamamı ekranı kaydırarak geçecek */
+    }
+}
+
 /* Mobil uyum için ekstra düzenlemeler */
 @media screen and (max-width: 768px) {
     /* Etkinlik fotoğraflarını mobilde daha geniş yapalım */
-    .etkinlik-fotograflar {
-        width: auto; /* Mobilde otomatik genişlik */
-        flex: 1 0 auto; /* Esneklik ayarı */
-    }
-
-    .etkinlik-fotograflar img {
-        width: 150px; /* Mobilde fotoğrafların boyutunu küçültüyoruz */
-    }
-}
+    .etki
 
 
 
