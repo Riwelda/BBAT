@@ -137,12 +137,12 @@ article h2 {
     display: flex;
     justify-content: center; /* Ortalar */
     align-items: center; /* Dikeyde ortalar */
-    gap: 20px; /* Afiş ve video arasına boşluk ekler */
-    margin-top: 20px; /* Üstte boşluk bırakır */
+    gap: 10px; /* Afiş ve video arasına boşluk ekler */
+    margin-top: 10px; /* Üstte boşluk bırakır */
 }
 
 .media-item {
-    width: 45%; /* Her öğenin genişliği %45 olacak */
+    width: 75%; /* Her öğenin genişliği %45 olacak */
     height: auto; /* Oranları bozmadan hizalama sağlar */
 }
 
