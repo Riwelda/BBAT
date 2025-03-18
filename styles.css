@@ -144,18 +144,19 @@ article h2 {
 /* Media item ayarları */
 .media-item {
     width: 45%; /* Her öğenin genişliği %45 olacak */
-    height: 100%; /* Yükseklik, container ile eşit olacak */
+    height: 350px; /* Sabit yükseklik, her iki öğe için de aynı olacak */
 }
 
 /* Resim ve video stil ayarları */
 .media-container img,
 .media-container video {
-    width: 100%; /* Genişliği kapsayıcıya göre ayarlayacak */
-    height: 100%; /* Yüksekliği sabit tutacak */
-    object-fit: cover; /* Oranı bozmadan her iki öğeyi sığdıracak */
+    width: 100%; /* Genişlik %100, kapsayıcıya uyacak şekilde */
+    height: 100%; /* Yükseklik %100, kapsayıcıya uyacak şekilde */
+    object-fit: cover; /* Oranı bozmadan her iki öğeyi sığdırır */
     border-radius: 10px; /* Köşeleri yuvarlatır */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge ekler */
 }
+
 
 
 
