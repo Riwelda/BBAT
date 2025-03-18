@@ -130,6 +130,32 @@ article h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+
+
+.media-container {
+    display: flex; /* İçindeki öğeleri yan yana dizer */
+    justify-content: center; /* Ortalar */
+    align-items: center; /* Dikey hizalamayı yapar */
+    gap: 20px; /* Fotoğraf ve video arasında boşluk bırakır */
+    margin-top: 20px; /* Üstte boşluk bırakır */
+}
+
+.media-container img,
+.media-container video {
+    width: 45%; /* Eşit genişlik ayarlar */
+    height: auto; /* Oranları korur */
+    border-radius: 10px; /* Köşeleri yuvarlatır */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge ekler */
+}
+
+.media-container video {
+    outline: none; /* Video çerçevesini kaldırır */
+    object-fit: cover; /* Oranları bozmadan sığdırır */
+}
+
+
+
+
 /* Mobil uyum */
 @media screen and (max-width: 768px) {
     .mission-vision-container {
