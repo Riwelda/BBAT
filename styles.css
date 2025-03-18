@@ -144,7 +144,7 @@ article h2 {
 /* Media item ayarları */
 .media-item {
     width: 45%; /* Her öğenin genişliği %45 olacak */
-    height: 350px; /* Sabit yükseklik, her iki öğe için de aynı olacak */
+    height: 350px; /* Sabit yükseklik */
 }
 
 /* Resim ve video stil ayarları */
@@ -156,6 +156,7 @@ article h2 {
     border-radius: 10px; /* Köşeleri yuvarlatır */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge ekler */
 }
+
 
 
 
