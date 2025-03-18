@@ -137,24 +137,25 @@ article h2 {
     display: flex;
     justify-content: center; /* Ortalar */
     align-items: center; /* Dikeyde ortalar */
-    gap: 10px; /* Afiş ve video arasına boşluk ekler */
-    margin-top: 10px; /* Üstte boşluk bırakır */
+    gap: 20px; /* Afiş ve video arasına boşluk ekler */
+    margin-top: 20px; /* Üstte boşluk bırakır */
 }
 
+/* Media item ayarları */
 .media-item {
-    width: 75%; /* Her öğenin genişliği %45 olacak */
-    height: auto; /* Oranları bozmadan hizalama sağlar */
+    width: 45%; /* Her öğenin genişliği %45 olacak */
+    height: 100%; /* Yükseklik, container ile eşit olacak */
 }
 
+/* Resim ve video stil ayarları */
 .media-container img,
 .media-container video {
     width: 100%; /* Genişliği kapsayıcıya göre ayarlayacak */
-    height: auto; /* Yüksekliği orantılı tutar */
+    height: 100%; /* Yüksekliği sabit tutacak */
+    object-fit: cover; /* Oranı bozmadan her iki öğeyi sığdıracak */
     border-radius: 10px; /* Köşeleri yuvarlatır */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge ekler */
 }
-
-
 
 
 
