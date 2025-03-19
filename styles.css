@@ -133,26 +133,33 @@ article h2 {
 
 
 /* Media container düzenlemesi */
+/* Media container stil ayarları */
 .media-container {
     display: flex;
     justify-content: center; /* Ortalar */
     align-items: center; /* Dikeyde ortalar */
+    flex-wrap: wrap; /* Taşan öğeleri alt satıra yerleştirir */
     margin-top: 15px; /* Üstte boşluk bırakır */
-    margin-bottom: 15px; /*alttan boşluk*/
+    margin-bottom: 15px; /* Alttan boşluk */
 }
 
-/* Media item ayarları */
+/* Media item stil ayarları */
 .media-item {
     width: 45%; /* Her öğenin genişliği %45 olacak */
-    height: 350px; /* Sabit yükseklik */
+    max-width: 500px; /* Maksimum genişlik ayarlamak, aşırı genişlemesin */
+    height: auto; /* Yükseklik otomatik olacak, oran korunacak */
+    margin: 10px; /* Öğeler arasında boşluk bırakır */
 }
 
 /* Resim ve video stil ayarları */
-.media-container img,
+.media-container img {
     width: 100%; /* Genişlik %100, kapsayıcıya uyacak şekilde */
-    height: 100%; /* Yükseklik %100, kapsayıcıya uyacak şekilde */
+    height: auto; /* Yükseklik otomatik, oran korunacak */
+    object-fit: cover; /* Görüntü oranını bozmadan kapsayıcıya sığdırır */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge ekler */
+    border-radius: 8px; /* Kenarları yuvarlatır */
 }
+
 
 
 
