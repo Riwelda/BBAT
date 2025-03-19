@@ -149,7 +149,6 @@ article h2 {
 
 /* Resim ve video stil ayarları */
 .media-container img,
-.media-container video {
     width: 100%; /* Genişlik %100, kapsayıcıya uyacak şekilde */
     height: 100%; /* Yükseklik %100, kapsayıcıya uyacak şekilde */
     object-fit: cover; /* Oranı bozmadan her iki öğeyi sığdırır */
