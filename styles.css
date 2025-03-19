@@ -130,10 +130,7 @@ article h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
-
 /* Media container düzenlemesi */
-/* Media container stil ayarları */
 .media-container {
     display: flex;
     justify-content: center; /* Ortalar */
@@ -143,11 +140,9 @@ article h2 {
     margin-bottom: 15px; /* Alttan boşluk */
 }
 
-/* Media item stil ayarları */
 .media-item {
-    width: 45%; /* Her öğenin genişliği %45 olacak */
-    max-width: 500px; /* Maksimum genişlik ayarlamak, aşırı genişlemesin */
-    height: auto; /* Yükseklik otomatik olacak, oran korunacak */
+    width: 100%; /* Genişlik %100 olacak */
+    max-width: 500px; /* Maksimum genişlik ayarlamak */
     margin: 10px; /* Öğeler arasında boşluk bırakır */
 }
 
@@ -158,23 +153,6 @@ article h2 {
     object-fit: cover; /* Görüntü oranını bozmadan kapsayıcıya sığdırır */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge ekler */
     border-radius: 8px; /* Kenarları yuvarlatır */
-}
-
-
-
-
-
-
-/* Mobil uyum */
-@media screen and (max-width: 768px) {
-    .mission-vision-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .mission, .vision {
-        width: 100%;
-    }
 }
 
 /* Etkinlik Fotoğrafları */
@@ -235,5 +213,23 @@ footer p {
     }
     to {
         opacity: 1;
+    }
+}
+
+/* Mobil uyum */
+@media screen and (max-width: 768px) {
+    .mission-vision-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .mission, .vision {
+        width: 100%;
+    }
+
+    /* Sosyal medya ikonları için mobil uyum */
+    .social-icon {
+        width: 35px;
+        height: 35px;
     }
 }
