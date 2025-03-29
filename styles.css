@@ -130,30 +130,7 @@ article h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Media container düzenlemesi */
-.media-container {
-    display: flex;
-    justify-content: center; /* Ortalar */
-    align-items: center; /* Dikeyde ortalar */
-    flex-wrap: wrap; /* Taşan öğeleri alt satıra yerleştirir */
-    margin-top: 15px; /* Üstte boşluk bırakır */
-    margin-bottom: 15px; /* Alttan boşluk */
-}
 
-.media-item {
-    width: 100%; /* Genişlik %100 olacak */
-    max-width: 500px; /* Maksimum genişlik ayarlamak */
-    margin: 10px; /* Öğeler arasında boşluk bırakır */
-}
-
-/* Resim ve video stil ayarları */
-.media-container img {
-    width: 100%; /* Genişlik %100, kapsayıcıya uyacak şekilde */
-    height: auto; /* Yükseklik otomatik, oran korunacak */
-    object-fit: cover; /* Görüntü oranını bozmadan kapsayıcıya sığdırır */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge ekler */
-    border-radius: 8px; /* Kenarları yuvarlatır */
-}
 
 /* Etkinlik Fotoğrafları */
 .etkinlik-container {
