@@ -24,13 +24,18 @@ header .toplogo {
 
 header .unilogo {
     left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
 }
+
 
 header .toplogo {
     right: 20px;
 }
 
-header .unilogo img,
 header .toplogo img {
     height: 100px;
     width: 100px;
@@ -39,6 +44,21 @@ header .toplogo img {
     border: none;
     outline: none;
 }
+
+
+
+header .unilogo img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: none;
+    outline: none;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
 
 h1 {
     margin: 0;
@@ -50,7 +70,7 @@ h1 {
 
 /* Sosyal medya simgeleri */
 .social-media {
-    margin-top: 20px;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -142,7 +162,7 @@ article h2 {
 .etkinlik-fotograflar {
     display: flex;
     white-space: nowrap;
-    animation: kayma 20s linear infinite;
+    animation: kayma 50s linear infinite;
     width: max-content;
 }
 
@@ -174,6 +194,76 @@ footer p {
     margin: 0;
 }
 
+
+
+
+
+
+
+/* Hamburger ikonu */
+.menu-toggle {
+    position: absolute;
+    bottom: 3px;
+    left: 150px;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 1000;
+    background-color: white;
+    color: #004d6a;
+    border: 2px solid #004d6a;
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Menü paneli */
+.menu {
+    position: absolute;
+    top: 95px;
+    left: 200px;
+    background-color: white;
+    border: 2px solid #004d6a;
+    border-radius: 8px;
+    padding: 10px 20px;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 10px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #004d6a;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* Fade-in animation */
 @keyframes fadeIn {
     from {
@@ -199,12 +289,66 @@ footer p {
         padding: 20px 10px 30px;
     }
 
-    header .unilogo img,
     header .toplogo img {
         height: 60px;
         width: 60px;
     }
 
+    header .unilogo {
+        left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+    }
+
+    header .unilogo img {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: none;
+        outline: none;
+        display: block;
+        margin: 0 auto;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+
+    @media screen and (max-width: 768px) {
+        /* Hamburger ikonu mobil uyum */
+        .menu-toggle {
+            left: 35px;
+            bottom: 5px;
+            width: 25px;
+            height: 25px;
+            font-size: 16px;
+        }
+    
+        /* Menü paneli mobil uyum */
+        .menu {
+            top: 150px;
+            left: 70px;
+            right: 10px;
+            width: calc(30% - 5px);
+            border-radius: 5px;
+            padding: 10px;
+        }
+    
+        .menu ul li {
+            margin: 15px 0;
+            text-align: center;
+        }
+    
+        .menu ul li a {
+            font-size: 13px;
+        }
+    }
+    
+
+    
+    
     h1 {
         font-size: 17px;
         margin-left: 80px;
@@ -212,22 +356,37 @@ footer p {
     }
 
     .social-media {
-        gap: 15px;
-        margin-top: -27px;
-        position: relative;
+        gap: 20px; /* Çok büyük gap yerine daha uygun bir boşluk */
+        margin-top: 10000px; /* İstediğin kadar yukarı alabilirsin */
+        margin-left: auto;
+        margin-right: auto; /* Orta hizalama */
+        position: relative; /* position absolute yerine relative kullan */
         z-index: 9999999;
         padding: 0 10px;
         flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* İçerikleri ortalar */
     }
-
+    
     .social-icon {
-        width: 20px;
-        height: 20px;
+        width: 30px; /* Görsellerin boyutunu biraz büyütmeyi deneyebilirsin */
+        height: 30px;
     }
+    
 
     main {
         width: 90%;
     }
+    
+    article {
+        margin-top: 10px;  
+    }    
+
+
+
+
+
 
     article {
         padding: 15px;
@@ -251,3 +410,24 @@ footer p {
         margin: 0 5px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .social-media {
+        margin-top: 10px;
+        gap: 10px;
+        padding: 0 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-icon img {
+        width: 80%;
+        height: 80%;
+    }
+}
+
