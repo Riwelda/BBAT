@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBAT</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/pngikologo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Quicksand:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    
+    <div class="unilogo">
+        <img src="https://github.com/Riwelda/BBAT/blob/main/unilogo.jpg?raw=true" alt="unilogo">
+    </div>
+    
+    <h1>BBAT</h1>
+    <h1>BİZE ULAŞIN</h1>
+    <div class="toplogo">
+        <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/pngikologo.png" alt="Üst Logo">
+    </div>
+
+    
+    
+    <div class="menu-toggle" id="menu-toggle">
+        &#9776;
+    </div>
+
+
+    <nav class="menu" id="menu">
+        <ul>
+            <li><a href="https://www.bbat.tr">Anasayfa</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="projeler.html">Etkinliklerimiz</a></li>
+        </ul>
+    </nav>
+
+
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+    
+        menuToggle.addEventListener('click', () => {
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        });
+    
+        // Menü dışında bir yere tıklanınca menüyü kapat
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
+
+</header>
+
+<main>
+
+    
+    
+    <article>
+        <h2>Instagram, X ve E-posta hesaplarımız.</h2>
+    
+    <div class="social-media">
+        <a href="https://www.instagram.com/biyolojikbilimlerat" class="social-icon" id="instagram">
+            <img src="https://www.svgrepo.com/show/327370/logo-instagram.svg" alt="Instagram">
+        </a>
+        <a href="https://twitter.com/bbatkastamonu" class="social-icon" id="twitter">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="Twitter">
+        </a>
+        <a href="mailto:biyolojikbilimlerat@gmail.com" class="social-icon" id="email">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Envelope_alt_font_awesome.svg" alt="Email">
+        </a>
+    </div>
+
+
+</article>
+    </main>
+
+
+    
