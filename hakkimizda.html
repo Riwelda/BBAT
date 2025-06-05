@@ -10,62 +10,34 @@
 </head>
 <body>
 
-<header>
-    
-    <div class="unilogo">
-        <img src="https://github.com/Riwelda/BBAT/blob/main/unilogo.jpg?raw=true" alt="unilogo">
-    </div>
-    
-    <h1>BBAT</h1>
-    <h1>BİZ KİMİZ?</h1>
-    <div class="toplogo">
-        <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/pngikologo.png" alt="Üst Logo">
-    </div>
-
-    
-    
-    <div class="menu-toggle" id="menu-toggle">
-        &#9776;
-    </div>
-
-
-    <nav class="menu" id="menu">
-        <ul>
-            <li><a href="https://www.bbat.tr">Anasayfa</a></li>
+    <header>
+        <div class="unilogo">
+            <img src="https://github.com/Riwelda/BBAT/blob/main/unilogo.jpg?raw=true" alt="unilogo">
+        </div>
+        <h1>BİYOLOJİK BİLİMLER ARAŞTIRMA TOPLULUĞU</h1>
+        <div class="toplogo">
+            <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/pngikologo.png" alt="Üst Logo">
+        </div>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <nav class="menu" id="menu">
+            <ul>
+                <li><a href="./">Anasayfa</a></li>
             <li><a href="projeler.html">Etkinliklerimiz</a></li>
             <li><a href="iletisim.html">İletişim</a></li>
-        </ul>
-    </nav>
-
-
-
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
+            </ul>
+        </nav>
     
-        menuToggle.addEventListener('click', () => {
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
-        });
+        <div id="auth-buttons" class="auth-buttons">
+            <button id="signup-btn">Kayıt Ol</button>
+            <button id="login-btn">Giriş Yap</button>
+        </div>
     
-        // Menü dışında bir yere tıklanınca menüyü kapat
-        document.addEventListener('click', (e) => {
-            if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
-                menu.style.display = 'none';
-            }
-        });
-    </script>
-
-
-
-<footer>
-    <p>&copy; 2025 BBAT, KASTAMONU ÜNİVERSİTESİNE BAĞLI BİR ÖĞRENCİ TOPLULUĞUDUR.</p>
-</footer>
-
-</header>
+        <div id="user-info" class="auth-buttons" style="display: none;">
+            <span id="welcome-text"></span>
+            <button id="logout-btn">Çıkış Yap</button>
+        </div>
+       
+    </header>
 
 <main>
 
@@ -83,3 +55,98 @@
             <p>BBAT olarak, doğa bilimleri alanında yetkin, araştırmacı ruhlu ve çevreye duyarlı bireyler yetiştirerek Kastamonu Üniversitesi’nde bilimsel bilginin yaygınlaştırılmasına öncülük etmek istiyoruz. Doğa ve biyolojik bilimler alanında farkındalık oluşturarak, toplumsal ve çevresel sorunlara bilimsel çözümler üreten bir öğrenci topluluğu olmayı hedefliyoruz.</p>
         </article>
     </div>
+
+    <footer>
+        <p>&copy; 2025 BBAT, KASTAMONU ÜNİVERSİTESİNE BAĞLI BİR ÖĞRENCİ TOPLULUĞUDUR.</p>
+    </footer>
+
+    <!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+<script>
+    // Firebase yapılandırma
+    const firebaseConfig = {
+        apiKey: "AIzaSyAdPt8XuUEzJugYI2R9NpUXUCUQXttHaXI",
+        authDomain: "bbat-295c4.firebaseapp.com",
+        projectId: "bbat-295c4",
+        appId: "1:849546748999:web:476431352773d260fcfd62"
+    };
+
+    // Firebase başlat
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // Kullanıcı durumuna göre butonları göster/gizle ve kullanıcı adını getir
+    auth.onAuthStateChanged(async (user) => {
+        const authButtons = document.getElementById('auth-buttons');
+        const userInfo = document.getElementById('user-info');
+        const welcomeText = document.getElementById('welcome-text');
+
+        if (user) {
+            authButtons.style.display = 'none';
+            userInfo.style.display = 'block';
+
+            try {
+                const userDoc = await db.collection('users').doc(user.uid).get();
+                if (userDoc.exists) {
+                    const username = userDoc.data().username || user.email.split('@')[0];
+                    welcomeText.textContent = `Hoş geldiniz, ${username}`;
+                } else {
+                    welcomeText.textContent = `Hoş geldiniz, ${user.email.split('@')[0]}`;
+                }
+            } catch (error) {
+                console.error("Kullanıcı adı alınırken hata:", error);
+                welcomeText.textContent = `Hoş geldiniz, ${user.email.split('@')[0]}`;
+            }
+        } else {
+            authButtons.style.display = 'block';
+            userInfo.style.display = 'none';
+            welcomeText.textContent = '';
+        }
+    });
+
+    // Çıkış yap
+    function logout() {
+        auth.signOut().then(() => {
+            alert("Çıkış yapıldı.");
+            window.location.reload();
+        }).catch((error) => {
+            alert("Çıkış yapılamadı: " + error.message);
+        });
+    }
+
+    // Giriş ve kayıt yönlendirme
+    document.getElementById("signup-btn").addEventListener("click", function () {
+        window.location.href = "register.html";
+    });
+
+    document.getElementById("login-btn").addEventListener("click", function () {
+        window.location.href = "login.html";
+    });
+
+    // Çıkış butonuna tıklama dinleyicisi
+    document.getElementById("logout-btn").addEventListener("click", logout);
+</script>
+<!-- Menü ve Galeri Script -->
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    menuToggle.addEventListener('click', () => {
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+            menu.style.display = 'none';
+        }
+    });
+
+</script>
