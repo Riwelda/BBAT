@@ -6,6 +6,8 @@ body {
     background-color: #f4f4f4;
 }
 
+
+
 /* Başlık (Header) */
 header {
     background: linear-gradient(45deg, #004d6a, #66b3cc);
@@ -60,6 +62,98 @@ header .unilogo img {
 }
 
 
+
+giriş yap butonları ayarları/
+
+.menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#menu {
+    display: none;
+}
+
+#auth-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    position: absolute; /* Butonları ekranın altına taşımak için */
+    right: 250px; /* Sağdan hizalama */
+    top: 95px; /* Yukarıdan 80px aşağı kaydırma */
+    padding-right: 20px; /* Sağda biraz boşluk bırakmak için */
+}
+
+#auth-buttons button {
+    background-color: #2196f3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#auth-buttons button:hover {
+    background-color: #1976d2;
+}
+
+#auth-buttons.hidden {
+    display: none;
+}
+
+
+
+#auth-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    position: absolute; /* Butonları ekranın altına taşımak için */
+    right: 300px; /* Sağdan hizalama */
+    top: 95px; /* Yukarıdan 80px aşağı kaydırma */
+    padding-right: 20px; /* Sağda biraz boşluk bırakmak için */
+}
+
+#user-info button {
+    background-color: #2196f3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#user-info button:hover {
+    background-color: #1976d2;
+}
+
+#user-info.hidden {
+    display: none;
+}
+
+#user-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    position: absolute; /* Butonları ekranın altına taşımak için */
+    right: 300px; /* Sağdan hizalama */
+    top: 95px; /* Yukarıdan 80px aşağı kaydırma */
+    padding-right: 20px; /* Sağda biraz boşluk bırakmak için */
+}
+
+
+
+
+.auth-buttons {
+    display: none;
+}
+
+
+
+
+
+
+
+
 h1 {
     margin: 0;
     padding: 10px 0;
@@ -103,6 +197,15 @@ h1 {
     transform: scale(1.1);
     filter: brightness(1.2);
 }
+
+
+
+
+
+
+
+
+
 
 /* İçerik ve fotoğraf */
 main {
@@ -255,9 +358,14 @@ footer p {
 }
 
 
-
-
-
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
 
 
 
@@ -431,3 +539,41 @@ footer p {
     }
 }
 
+
+
+@media (max-width: 768px) {
+    #user-info {
+        position: absolute; /* Sabit hale getirilmesi, mobilde ekran kayması önlenir */
+        right: 15px; /* Sağdan daha az mesafe */
+        top: 105px; /* Üstten daha kısa mesafe */
+        padding-right: 5px; /* Sağdaki boşluğu kısaltma */
+        flex-direction: column; /* Dikey hizalama */
+        gap: 10px; /* Butonlar arasındaki boşluk */
+    }
+    
+    #user-info button {
+        padding: 2px 4px; /* Butonun boyutlarını küçültme */
+        font-size: 14px; /* Yazı boyutunu küçük ekran için uygun hale getirme */
+    }
+}
+
+@media (max-width: 768px) {
+    #auth-buttons,
+    #user-info {
+        position: static; /* Mutlak konumlandırmadan çık */
+        display: flex;
+        flex-direction: column; /* Dikey hizalama */
+        align-items: center; /* Ortala */
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        margin-left: 12px;
+    }
+
+    #auth-buttons button,
+    #user-info button {
+        padding: 8px 12px;
+        font-size: 14px;
+        width: 120px; /* Genişliği sabitleyerek hizalı görünmesini sağlar */
+    }
+}
