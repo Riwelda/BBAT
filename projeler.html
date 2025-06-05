@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -10,39 +7,74 @@
     <link rel="icon" href="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/pngikologo.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Quicksand:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Lightbox Stil -->
+    <style>
+        .lightbox-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .lightbox-overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid white;
+            border-radius: 10px;
+        }
+        .lightbox-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        .lightbox-controls button {
+            background: rgba(255, 255, 255, 0.7);
+            border: none;
+            font-size: 2rem;
+            padding: 10px;
+            margin: 0 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+    </style>
 </head>
-<body>
 
 <header>
-    
     <div class="unilogo">
         <img src="https://github.com/Riwelda/BBAT/blob/main/unilogo.jpg?raw=true" alt="unilogo">
     </div>
-   
-    <h1>BBAT</h1>
-    <h1>ETKİNLİKLERİMİZ</h1>
+    <h1>BİYOLOJİK BİLİMLER ARAŞTIRMA TOPLULUĞU</h1>
     <div class="toplogo">
         <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/pngikologo.png" alt="Üst Logo">
     </div>
-
-    
-    
-    <div class="menu-toggle" id="menu-toggle">
-        &#9776;
-    </div>
-
-
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     <nav class="menu" id="menu">
         <ul>
-            <li><a href="https://www.bbat.tr">Anasayfa</a></li>
-            <li><a href="hakkimizda.html">Hakkımızda</a></li>
-            <li><a href="iletisim.html">İletişim</a></li>
+          <li><a href="./">Anasayfa</a></li>
+          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
         </ul>
     </nav>
 
+    <div id="auth-buttons" class="auth-buttons">
+        <button id="signup-btn">Kayıt Ol</button>
+        <button id="login-btn">Giriş Yap</button>
+    </div>
 
-    
-
+    <div id="user-info" class="auth-buttons" style="display: none;">
+        <span id="welcome-text"></span>
+        <button id="logout-btn">Çıkış Yap</button>
+    </div>
+   
 </header>
 
 
@@ -51,6 +83,126 @@
     <div class="photo-strip">
         <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/fenfak.jpeg" alt="Etkinlik Fotoğrafı">
     </div>
+
+
+    <article>
+
+      <h2> Cide Topluluk Başkanları Toplantısı </h2>
+      <p class="meta">Yazar: Alper YAMAN | Tarih: 5 Haziran 2025</p>
+      <p> Biyolojik Bilimler Araştırma Topluluğu olarak, 2-3 Haziran topluluk başkanları toplantısına katılım sağladık. Sayın Rektörümüz Prof. Dr. Ahmet Hamdi TOPAL ve Sağlık, Kültür ve Spor Daire Başkanlığına bu değerli program için teşekkür ederiz. </p>
+      
+       <div class="etkinlik-container">
+              <div class="etkinlik-fotograflar">
+                <video controls width="300">
+                  <source src="https://github.com/Riwelda/BBAT/raw/refs/heads/main/bt1.mp4" type="video/mp4">
+                </video>
+                <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/bt2.jpg" alt="Etkinlik 2">
+                <video controls width="300">
+                  <source src="https://github.com/Riwelda/BBAT/raw/refs/heads/main/bt3.mp4" type="video/mp4">
+                </video>
+                  <!-- Görsellerin tekrar etmesi için ikinci set -->
+                  <video controls width="300">
+                    <source src="https://github.com/Riwelda/BBAT/raw/refs/heads/main/bt1.mp4" type="video/mp4">
+                  </video>
+                  <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/bt2.jpg" alt="Etkinlik 2">
+                  <video controls width="300">
+                    <source src="https://github.com/Riwelda/BBAT/raw/refs/heads/main/bt3.mp4" type="video/mp4">
+                  </video>
+ 
+              </div>
+          </div>
+
+            <div class="post" data-post-id="post1">
+
+              <style>
+                .comment-section {
+                  margin-top: 20px;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+            
+                .comments-list {
+                  list-style: none;
+                  padding: 0;
+                  max-height: 250px;
+                  overflow-y: auto;
+                  margin-bottom: 15px;
+                  border: 1px solid #ddd;
+                  border-radius: 6px;
+                  background: #fafafa;
+                }
+            
+                .comments-list li {
+                  padding: 10px 15px;
+                  border-bottom: 1px solid #eee;
+                  font-size: 14px;
+                  color: #333;
+                }
+            
+                .comments-list li:last-child {
+                  border-bottom: none;
+                }
+            
+                .comment-input-area {
+                  display: flex;
+                  gap: 10px;
+                }
+            
+                .comment-input-area textarea {
+                  flex-grow: 1;
+                  padding: 10px;
+                  font-size: 14px;
+                  border-radius: 6px;
+                  border: 1px solid #ccc;
+                  resize: vertical;
+                  min-height: 60px;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+            
+                .comment-input-area button {
+                  background-color: #007bff; /* BBAT ana renklerine uyarlanabilir */
+                  border: none;
+                  color: white;
+                  font-weight: 600;
+                  padding: 0 20px;
+                  border-radius: 6px;
+                  cursor: pointer;
+                  transition: background-color 0.3s ease;
+                  font-size: 14px;
+                }
+            
+                .comment-input-area button:hover {
+                  background-color: #0056b3;
+                }
+              </style>
+            
+            <div class="comment-section" data-post-id="post1">
+              <ul class="comments-list" id="comments-post1">
+                <!-- Yorumlar burada -->
+              </ul>
+            
+              <div class="comment-input-area">
+                <textarea id="comment-input-post1" placeholder="Yorumunuzu yazınız..."></textarea>
+                <button onclick="submitComment('post1')">Gönder</button>
+              </div>
+            </div>
+            
+              
+                
+              </div>
+              
+              
+            </div>
+           
+            
+            
+      </article>
+
+
+
+
+
+
+
       
     <article>
 
@@ -83,7 +235,93 @@
                     <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/panel%20(9).jpg" alt="Etkinlik 9"> 
                 </div>
             </div>
+
+           
         
+
+            <div class="post" data-post-id="post1">
+
+                <style>
+                  .comment-section {
+                    margin-top: 20px;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                  }
+              
+                  .comments-list {
+                    list-style: none;
+                    padding: 0;
+                    max-height: 250px;
+                    overflow-y: auto;
+                    margin-bottom: 15px;
+                    border: 1px solid #ddd;
+                    border-radius: 6px;
+                    background: #fafafa;
+                  }
+              
+                  .comments-list li {
+                    padding: 10px 15px;
+                    border-bottom: 1px solid #eee;
+                    font-size: 14px;
+                    color: #333;
+                  }
+              
+                  .comments-list li:last-child {
+                    border-bottom: none;
+                  }
+              
+                  .comment-input-area {
+                    display: flex;
+                    gap: 10px;
+                  }
+              
+                  .comment-input-area textarea {
+                    flex-grow: 1;
+                    padding: 10px;
+                    font-size: 14px;
+                    border-radius: 6px;
+                    border: 1px solid #ccc;
+                    resize: vertical;
+                    min-height: 60px;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                  }
+              
+                  .comment-input-area button {
+                    background-color: #007bff; /* BBAT ana renklerine uyarlanabilir */
+                    border: none;
+                    color: white;
+                    font-weight: 600;
+                    padding: 0 20px;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    font-size: 14px;
+                  }
+              
+                  .comment-input-area button:hover {
+                    background-color: #0056b3;
+                  }
+                </style>
+              
+              <div class="comment-section" data-post-id="post1">
+                <ul class="comments-list" id="comments-post1">
+                  <!-- Yorumlar burada -->
+                </ul>
+              
+                <div class="comment-input-area">
+                  <textarea id="comment-input-post1" placeholder="Yorumunuzu yazınız..."></textarea>
+                  <button onclick="submitComment('post1')">Gönder</button>
+                </div>
+              </div>
+              
+                
+                  
+                </div>
+                
+                
+              </div>
+             
+              
+              
         </article>
 
 
@@ -113,6 +351,86 @@
                         <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/kahvalti%20(6).jpg" alt="Etkinlik 6">
                     </div>
                 </div>
+
+
+                <div class="post" data-post-id="post2">
+
+                    <style>
+                      .comment-section {
+                        margin-top: 20px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      }
+                  
+                      .comments-list {
+                        list-style: none;
+                        padding: 0;
+                        max-height: 250px;
+                        overflow-y: auto;
+                        margin-bottom: 15px;
+                        border: 1px solid #ddd;
+                        border-radius: 6px;
+                        background: #fafafa;
+                      }
+                  
+                      .comments-list li {
+                        padding: 10px 15px;
+                        border-bottom: 1px solid #eee;
+                        font-size: 14px;
+                        color: #333;
+                      }
+                  
+                      .comments-list li:last-child {
+                        border-bottom: none;
+                      }
+                  
+                      .comment-input-area {
+                        display: flex;
+                        gap: 10px;
+                      }
+                  
+                      .comment-input-area textarea {
+                        flex-grow: 1;
+                        padding: 10px;
+                        font-size: 14px;
+                        border-radius: 6px;
+                        border: 1px solid #ccc;
+                        resize: vertical;
+                        min-height: 60px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      }
+                  
+                      .comment-input-area button {
+                        background-color: #007bff; /* BBAT ana renklerine uyarlanabilir */
+                        border: none;
+                        color: white;
+                        font-weight: 600;
+                        padding: 0 20px;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                        font-size: 14px;
+                      }
+                  
+                      .comment-input-area button:hover {
+                        background-color: #0056b3;
+                      }
+                    </style>
+                  
+                    <div class="comment-section">
+                      <ul class="comments-list" id="comments-post2">
+                        <!-- Yorumlar buraya eklenecek -->
+                      </ul>
+                  
+                      <div class="comment-input-area">
+                        <textarea id="comment-input-post2" placeholder="Yorumunuzu yazınız..."></textarea>
+                        <button onclick="submitComment('post2')">Gönder</button>
+                      </div>
+                      
+            
+                    </div>
+
+                  </div>
+                  
             </article>
 
 
@@ -150,8 +468,83 @@
                     </div>
                 </div>
             
-            
-            
+                <div class="post" data-post-id="post3">
+
+                    <style>
+                      .comment-section {
+                        margin-top: 20px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      }
+                  
+                      .comments-list {
+                        list-style: none;
+                        padding: 0;
+                        max-height: 250px;
+                        overflow-y: auto;
+                        margin-bottom: 15px;
+                        border: 1px solid #ddd;
+                        border-radius: 6px;
+                        background: #fafafa;
+                      }
+                  
+                      .comments-list li {
+                        padding: 10px 15px;
+                        border-bottom: 1px solid #eee;
+                        font-size: 14px;
+                        color: #333;
+                      }
+                  
+                      .comments-list li:last-child {
+                        border-bottom: none;
+                      }
+                  
+                      .comment-input-area {
+                        display: flex;
+                        gap: 10px;
+                      }
+                  
+                      .comment-input-area textarea {
+                        flex-grow: 1;
+                        padding: 10px;
+                        font-size: 14px;
+                        border-radius: 6px;
+                        border: 1px solid #ccc;
+                        resize: vertical;
+                        min-height: 60px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      }
+                  
+                      .comment-input-area button {
+                        background-color: #007bff; /* BBAT ana renklerine uyarlanabilir */
+                        border: none;
+                        color: white;
+                        font-weight: 600;
+                        padding: 0 20px;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                        font-size: 14px;
+                      }
+                  
+                      .comment-input-area button:hover {
+                        background-color: #0056b3;
+                      }
+                    </style>
+                  
+                    <div class="comment-section">
+                      <ul class="comments-list" id="comments-post3">
+                        <!-- Yorumlar buraya eklenecek -->
+                      </ul>
+                  
+                      <div class="comment-input-area">
+                        <textarea id="comment-input-post3" placeholder="Yorumunuzu yazınız..."></textarea>
+                        <button onclick="submitComment('post3')">Gönder</button>
+                      </div>
+                    </div>
+                      
+                  </div>
+
+                  
             
             </article>
 
@@ -191,6 +584,86 @@
                         <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/sozdebilim%20(9).webp" alt="Etkinlik 9">
                     </div>
                 </div>
+
+
+
+                <div class="post" data-post-id="post4">
+
+                    <style>
+                      .comment-section {
+                        margin-top: 20px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      }
+                  
+                      .comments-list {
+                        list-style: none;
+                        padding: 0;
+                        max-height: 250px;
+                        overflow-y: auto;
+                        margin-bottom: 15px;
+                        border: 1px solid #ddd;
+                        border-radius: 6px;
+                        background: #fafafa;
+                      }
+                  
+                      .comments-list li {
+                        padding: 10px 15px;
+                        border-bottom: 1px solid #eee;
+                        font-size: 14px;
+                        color: #333;
+                      }
+                  
+                      .comments-list li:last-child {
+                        border-bottom: none;
+                      }
+                  
+                      .comment-input-area {
+                        display: flex;
+                        gap: 10px;
+                      }
+                  
+                      .comment-input-area textarea {
+                        flex-grow: 1;
+                        padding: 10px;
+                        font-size: 14px;
+                        border-radius: 6px;
+                        border: 1px solid #ccc;
+                        resize: vertical;
+                        min-height: 60px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      }
+                  
+                      .comment-input-area button {
+                        background-color: #007bff; /* BBAT ana renklerine uyarlanabilir */
+                        border: none;
+                        color: white;
+                        font-weight: 600;
+                        padding: 0 20px;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                        font-size: 14px;
+                      }
+                  
+                      .comment-input-area button:hover {
+                        background-color: #0056b3;
+                      }
+                    </style>
+                  
+                    <div class="comment-section">
+                      <ul class="comments-list" id="comments-post4">
+                        <!-- Yorumlar buraya eklenecek -->
+                      </ul>
+                  
+                      <div class="comment-input-area">
+                        <textarea id="comment-input-post4" placeholder="Yorumunuzu yazınız..."></textarea>
+                        <button onclick="submitComment('post4')">Gönder</button>
+                      </div>
+                    </div>
+                      
+                  </div>
+
+            
             </article>
 
 
@@ -230,6 +703,88 @@
                         <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/mantaretkinlik%20(9).webp" alt="Etkinlik 9">
                     </div>
                 </div>
+
+
+
+                <div class="post" data-post-id="post5">
+
+                    <style>
+                      .comment-section {
+                        margin-top: 20px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      }
+                  
+                      .comments-list {
+                        list-style: none;
+                        padding: 0;
+                        max-height: 250px;
+                        overflow-y: auto;
+                        margin-bottom: 15px;
+                        border: 1px solid #ddd;
+                        border-radius: 6px;
+                        background: #fafafa;
+                      }
+                  
+                      .comments-list li {
+                        padding: 10px 15px;
+                        border-bottom: 1px solid #eee;
+                        font-size: 14px;
+                        color: #333;
+                      }
+                  
+                      .comments-list li:last-child {
+                        border-bottom: none;
+                      }
+                  
+                      .comment-input-area {
+                        display: flex;
+                        gap: 10px;
+                      }
+                  
+                      .comment-input-area textarea {
+                        flex-grow: 1;
+                        padding: 10px;
+                        font-size: 14px;
+                        border-radius: 6px;
+                        border: 1px solid #ccc;
+                        resize: vertical;
+                        min-height: 60px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      }
+                  
+                      .comment-input-area button {
+                        background-color: #007bff; /* BBAT ana renklerine uyarlanabilir */
+                        border: none;
+                        color: white;
+                        font-weight: 600;
+                        padding: 0 20px;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                        font-size: 14px;
+                      }
+                  
+                      .comment-input-area button:hover {
+                        background-color: #0056b3;
+                      }
+                    </style>
+                  
+                    <div class="comment-section">
+                      <ul class="comments-list" id="comments-post5">
+                        <!-- Yorumlar buraya eklenecek -->
+                      </ul>
+                  
+                      <div class="comment-input-area">
+                        <textarea id="comment-input-post5" placeholder="Yorumunuzu yazınız..."></textarea>
+                        <button onclick="submitComment('post5')">Gönder</button>
+                      </div>
+                    </div>
+        
+                      
+                  </div>
+
+                
+
           </article>
 
 
@@ -274,57 +829,340 @@
                     </div>
                 </div>
             
-            
-            
+                <div class="post" data-post-id="post6">
+
+                    <style>
+                      .comment-section {
+                        margin-top: 20px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      }
+                  
+                      .comments-list {
+                        list-style: none;
+                        padding: 0;
+                        max-height: 250px;
+                        overflow-y: auto;
+                        margin-bottom: 15px;
+                        border: 1px solid #ddd;
+                        border-radius: 6px;
+                        background: #fafafa;
+                      }
+                  
+                      .comments-list li {
+                        padding: 10px 15px;
+                        border-bottom: 1px solid #eee;
+                        font-size: 14px;
+                        color: #333;
+                      }
+                  
+                      .comments-list li:last-child {
+                        border-bottom: none;
+                      }
+                  
+                      .comment-input-area {
+                        display: flex;
+                        gap: 10px;
+                      }
+                  
+                      .comment-input-area textarea {
+                        flex-grow: 1;
+                        padding: 10px;
+                        font-size: 14px;
+                        border-radius: 6px;
+                        border: 1px solid #ccc;
+                        resize: vertical;
+                        min-height: 60px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      }
+                  
+                      .comment-input-area button {
+                        background-color: #007bff; /* BBAT ana renklerine uyarlanabilir */
+                        border: none;
+                        color: white;
+                        font-weight: 600;
+                        padding: 0 20px;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                        font-size: 14px;
+                      }
+                  
+                      .comment-input-area button:hover {
+                        background-color: #0056b3;
+                      }
+                    </style>
+                  
+                    <div class="comment-section">
+                      <ul class="comments-list" id="comments-post6">
+                        <!-- Yorumlar buraya eklenecek -->
+                      </ul>
+                  
+                      <div class="comment-input-area">
+                        <textarea id="comment-input-post6" placeholder="Yorumunuzu yazınız..."></textarea>
+                        <button onclick="submitComment('post6')">Gönder</button>
+                      </div>
+                    </div>
+                      
+                  </div>
+                  
             
             </article>
-
-
-
-
-
-
-
-
-
-
-
 
 
 </main>
 
 <footer>
-    <p>&copy; 2025 BBAT, KASTAMONU ÜNİVERSİTESİNE BAĞLI BİR ÖĞRENCİ TOPLULUĞUDUR.</p>
+    <p>&copy; 2024 BBAT. Tüm hakları saklıdır.</p>
 </footer>
 
 
+<!-- Lightbox yapısı -->
+<div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-controls">
+        <button id="prev-btn">&#10094;</button>
+        <button id="next-btn">&#10095;</button>
+    </div>
+    <img id="lightbox-img" src="" alt="Büyütülmüş Görsel">
+</div>
+
+<!-- JavaScript -->
 <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
 
     menuToggle.addEventListener('click', () => {
-        if (menu.style.display === 'block') {
-            menu.style.display = 'none';
-        } else {
-            menu.style.display = 'block';
-        }
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     });
 
-    // Menü dışında bir yere tıklanınca menüyü kapat
     document.addEventListener('click', (e) => {
         if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
             menu.style.display = 'none';
         }
     });
+
+    const galleryImages = Array.from(document.querySelectorAll('.etkinlik-fotograflar img'));
+    let currentIndex = 0;
+
+    function showImage(index) {
+        if (index < 0) index = galleryImages.length - 1;
+        if (index >= galleryImages.length) index = 0;
+        currentIndex = index;
+        lightboxImg.src = galleryImages[currentIndex].src;
+        lightbox.style.display = 'flex';
+    }
+
+    galleryImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            showImage(index);
+        });
+    });
+
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showImage(currentIndex - 1);
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showImage(currentIndex + 1);
+    });
+
+    lightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+    });
 </script>
 
 
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { getFirestore, collection, addDoc, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+  
+    const firebaseConfig = {
+      apiKey: "AIzaSyAdPt8XuUEzJugYI2R9NpUXUCUQXttHaXI",
+      authDomain: "bbat-295c4.firebaseapp.com",
+      projectId: "bbat-295c4",
+      storageBucket: "bbat-295c4.appspot.com",
+      messagingSenderId: "849546748999",
+      appId: "1:849546748999:web:476431352773d260fcfd62",
+      measurementId: "G-DMZCNMJ7E0"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+  </script>
+  
 
+  <script type="module">
+    import {
+      getAuth,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      doc,
+      getDoc,
+      query,
+      orderBy,
+      onSnapshot
+    } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+  
+    const auth = getAuth();
+    const db = getFirestore();
+    let currentUser = null;
+  
+    // Giriş yapan kullanıcıyı takip et
+    onAuthStateChanged(auth, (user) => {
+      currentUser = user;
+    });
+  
+    // Yorum gönderme fonksiyonu
+    window.submitComment = async function(postId) {
+      const commentInput = document.getElementById(`comment-input-${postId}`);
+      const commentText = commentInput.value.trim();
+      if (!commentText) return;
+      if (!currentUser) {
+        alert("Giriş yapmadan yorum yapamazsınız.");
+        return;
+      }
+  
+      try {
+        // Firestore'dan kullanıcı adını çek
+        const userDocRef = doc(db, "users", currentUser.uid);
+        const userSnap = await getDoc(userDocRef);
+        const username = userSnap.exists() ? userSnap.data().username : "Anonim";
+  
+        // Yorumları veritabanına kaydet
+        await addDoc(collection(db, "comments"), {
+          postId: postId,
+          uid: currentUser.uid,
+          username: username,
+          text: commentText,
+          timestamp: new Date()
+        });
+  
+        commentInput.value = ""; // Yorum kutusunu temizle
+      } catch (error) {
+        console.error("Yorum gönderilirken hata:", error);
+      }
+    };
+  
+    // Yorumları dinle ve göster
+    function listenForComments(postId) {
+      const q = query(collection(db, "comments"), orderBy("timestamp"));
+      const commentList = document.getElementById(`comments-${postId}`);
+  
+      onSnapshot(q, (snapshot) => {
+        commentList.innerHTML = "";
+        snapshot.forEach((doc) => {
+          const c = doc.data();
+          if (c.postId === postId) {
+            const li = document.createElement("li");
+            li.textContent = `${c.username}: ${c.text}`;
+            commentList.appendChild(li);
+          }
+        });
+      });
+    }
+  
+    // Sayfa yüklenince tüm post'lar için yorumları dinle
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".post").forEach((post) => {
+        const postId = post.getAttribute("data-post-id");
+        listenForComments(postId);
+      });
+  
+      // Enter tuşuyla gönderim (Shift+Enter alt satır)
+      document.querySelectorAll('textarea[id^="comment-input-post"]').forEach(textarea => {
+        textarea.addEventListener('keydown', function(event) {
+          if (event.key === 'Enter' && !event.shiftKey) {
+            event.preventDefault();
+            const postId = this.id.replace('comment-input-', '');
+            submitComment(postId);
+          }
+        });
+      });
+    });
+  </script>
+  
+  <!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 
+<script>
+    // Firebase yapılandırma
+    const firebaseConfig = {
+        apiKey: "AIzaSyAdPt8XuUEzJugYI2R9NpUXUCUQXttHaXI",
+        authDomain: "bbat-295c4.firebaseapp.com",
+        projectId: "bbat-295c4",
+        appId: "1:849546748999:web:476431352773d260fcfd62"
+    };
 
+    // Firebase başlat
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
 
+    // Kullanıcı durumuna göre butonları göster/gizle ve kullanıcı adını getir
+    auth.onAuthStateChanged(async (user) => {
+        const authButtons = document.getElementById('auth-buttons');
+        const userInfo = document.getElementById('user-info');
+        const welcomeText = document.getElementById('welcome-text');
 
+        if (user) {
+            authButtons.style.display = 'none';
+            userInfo.style.display = 'block';
 
+            try {
+                const userDoc = await db.collection('users').doc(user.uid).get();
+                if (userDoc.exists) {
+                    const username = userDoc.data().username || user.email.split('@')[0];
+                    welcomeText.textContent = `Hoş geldiniz, ${username}`;
+                } else {
+                    welcomeText.textContent = `Hoş geldiniz, ${user.email.split('@')[0]}`;
+                }
+            } catch (error) {
+                console.error("Kullanıcı adı alınırken hata:", error);
+                welcomeText.textContent = `Hoş geldiniz, ${user.email.split('@')[0]}`;
+            }
+        } else {
+            authButtons.style.display = 'block';
+            userInfo.style.display = 'none';
+            welcomeText.textContent = '';
+        }
+    });
+
+    // Çıkış yap
+    function logout() {
+        auth.signOut().then(() => {
+            alert("Çıkış yapıldı.");
+            window.location.reload();
+        }).catch((error) => {
+            alert("Çıkış yapılamadı: " + error.message);
+        });
+    }
+
+    // Giriş ve kayıt yönlendirme
+    document.getElementById("signup-btn").addEventListener("click", function () {
+        window.location.href = "register.html";
+    });
+
+    document.getElementById("login-btn").addEventListener("click", function () {
+        window.location.href = "login.html";
+    });
+
+    // Çıkış butonuna tıklama dinleyicisi
+    document.getElementById("logout-btn").addEventListener("click", logout);
+</script>
+  
+  
 
 
 </body>
