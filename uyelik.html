@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BBAT Üyelik Sistemi</title>
+  <style>
+    body { font-family: Quicksand, sans-serif; padding: 2rem; }
+    .form-container { max-width: 400px; margin: auto; border: 1px solid #ccc; padding: 20px; border-radius: 10px; }
+    input { width: 100%; padding: 10px; margin: 10px 0; }
+    button { padding: 10px 15px; cursor: pointer; background-color: #2196f3; color: white; border: none; border-radius: 5px; }
+    .logout-btn { background-color: #f44336; }
+    .hidden { display: none; }
+  </style>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"></script>
+</head>
+<body>
+
+  <h2>BBAT Üyelik Giriş Sistemi</h2>
+  
+  <div class="form-container" id="auth-container">
+    <input type="email" id="email" placeholder="E-posta adresiniz" required>
+    <input type="password" id="password" placeholder="Şifre" required>
+
+    <button onclick="register()">Kayıt Ol</button>
+    <button onclick="login()">Giriş Yap</button>
+  </div>
+
+  <div class="form-container hidden" id="user-container">
+    <p id="welcome-text"></p>
+    <button class="logout-btn" onclick="logout()">Çıkış Yap</button>
+  </div>
+
+  <script>
+    // Firebase ayarlarını BURAYA ekle
+    const firebaseConfig = {
+      apiKey: "AIzaSyAdPt8XuUEzJugYI2R9NpUXUCUQXttHaXI",
+      authDomain: "bbat-295c4.firebaseapp.com",
+      projectId: "bbat-295c4",
+      appId: "1:849546748999:web:476431352773d260fcfd62"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // Kayıt
+    function register() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      auth.createUserWithEmailAndPassword(email, password)
+        .then(userCredential => alert("Kayıt başarılı!"))
+        .catch(error => alert(error.message));
+    }
+
+    // Giriş
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      auth.signInWithEmailAndPassword(email, password)
+        .then(userCredential => {
+          alert("Giriş başarılı!");
+        })
+        .catch(error => alert(error.message));
+    }
+
+    // Çıkış
+    function logout() {
+      auth.signOut().then(() => alert("Çıkış yapıldı."));
+    }
+
+    // Giriş durumunu izleme
+    auth.onAuthStateChanged(user => {
+      const authContainer = document.getElementById('auth-container');
+      const userContainer = document.getElementById('user-container');
+      const welcomeText = document.getElementById('welcome-text');
+
+      if (user) {
+        authContainer.classList.add('hidden');
+        userContainer.classList.remove('hidden');
+        welcomeText.textContent = `Hoş geldiniz, ${user.email}`;
+      } else {
+        authContainer.classList.remove('hidden');
+        userContainer.classList.add('hidden');
+        welcomeText.textContent = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
