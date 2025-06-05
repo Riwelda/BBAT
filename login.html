@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giriş Yap - BBAT</title>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+
+  <!-- Yazı tipi -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+  <!-- Stil -->
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* En üst görsel */
+    .top-image {
+      width: 100%;
+    }
+
+    .top-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h2 {
+      margin: 20px 0 10px;
+      color: #333;
+    }
+
+    form {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #388e3c;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    a {
+      margin-top: 15px;
+      color: #2196f3;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Sayfanın en üstüne görsel -->
+  <div class="top-image">
+    <img src="hh.jpg" alt="BBAT Banner">
+  </div>
+
+
+
+
+
+
+
+
+
+  <h2>BBAT - Giriş Yap</h2>
+
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="E-posta" required />
+    <input type="password" id="password" placeholder="Şifre" required />
+    <button type="submit">Giriş Yap</button>
+    <div class="message" id="message"></div>
+  </form>
+
+  <a href="register.html">Hesabın yok mu? Kayıt Ol</a>
+
+  <script>
+    // Firebase yapılandırması
+    const firebaseConfig = {
+      apiKey: "AIzaSyAdPt8XuUEzJugYI2R9NpUXUCUQXttHaXI",
+      authDomain: "bbat-295c4.firebaseapp.com",
+      projectId: "bbat-295c4",
+      storageBucket: "bbat-295c4.appspot.com",
+      messagingSenderId: "849546748999",
+      appId: "1:849546748999:web:476431352773d260fcfd62",
+      measurementId: "G-DMZCNMJ7E0"
+    };
+
+    // Firebase'i başlat
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // Giriş formu işlemleri
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const messageDiv = document.getElementById('message');
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+          messageDiv.style.color = 'green';
+          messageDiv.textContent = 'Giriş başarılı! Ana sayfaya yönlendiriliyorsunuz...';
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 2000);
+        })
+        .catch((error) => {
+          messageDiv.style.color = 'red';
+          messageDiv.textContent = "Hata: " + error.message;
+        });
+    });
+  </script>
+
+</body>
+</html>
