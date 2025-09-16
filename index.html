@@ -82,12 +82,41 @@
         <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/fenfak.jpeg" alt="Etkinlik Fotoğrafı">
     </div>
     
-<div class="duyurular-container">
-<article class="Duyurular!">
-    <h2>GÜNCEL DUYURULAR!</h2>
-    <p class="meta">06 Ağustos 2025
-    <p> BBAT WHATSAPP KANALIMIZ AÇILDI!! HERKESE AÇIK ANKETLER, SORU-CEVAPLAR VE DAHASI SİZLERİ BEKLİYOR! <a href="https://whatsapp.com/channel/0029VbAhiY9AInPi7ie7e02H ">BURAYA TIKLAYARAK KANALA ULAŞABİLRSİNİZ.</a> </p>
-</div>
+    <div class="duyurular-container">
+        <article class="duyurular">
+            <h2>GÜNCEL DUYURULAR!</h2>
+            
+            <p class="meta"><u>06 Ağustos 2025</u></p>
+            <p>
+                BBAT WHATSAPP KANALIMIZ AÇILDI!! HERKESE AÇIK ANKETLER, SORU-CEVAPLAR VE DAHASI SİZLERİ BEKLİYOR! 
+                <a href="https://whatsapp.com/channel/0029VbAhiY9AInPi7ie7e02H">BURAYA TIKLAYARAK KANALA ULAŞABİLRSİNİZ.</a>
+            </p>
+            
+            <p class="meta"><u>16 EYLÜL 2025</u></p>
+    
+            <!-- Flex container ile görsel ve metin yan yana -->
+            <div class="duyuru-flex">
+                <img src="https://raw.githubusercontent.com/Riwelda/BBAT/refs/heads/main/calistayduyurusu.jpg" 
+     alt="calistayduyurusu" 
+     class="duyuru-img lightbox-trigger gallery-img">
+                <div class="duyuru-text">
+                    <p>
+                        25 Eylül 09.30-17.00 saatleri arasında yapılacak olan çalıştayımıza tüm bilimseverler davetlidir.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </div>
+    
+    
+
+   
+        
+     
+    
+
+
+
 
 
 
@@ -146,6 +175,7 @@
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
 
+    // Menü toggle
     menuToggle.addEventListener('click', () => {
         menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     });
@@ -156,33 +186,54 @@
         }
     });
 
-    const galleryImages = Array.from(document.querySelectorAll('.etkinlik-fotograflar img'));
-    let currentIndex = 0;
+    // ------------------------
+    // Tüm galeriler için dinamik yapı
+    const galleries = document.querySelectorAll('.etkinlik-fotograflar, .gallery-row'); // .gallery-row projeler.html satırları olabilir
+    galleries.forEach(gallery => {
+        const images = Array.from(gallery.querySelectorAll('img'));
+        let currentIndex = 0;
 
-    function showImage(index) {
-        if (index < 0) index = galleryImages.length - 1;
-        if (index >= galleryImages.length) index = 0;
-        currentIndex = index;
-        lightboxImg.src = galleryImages[currentIndex].src;
-        lightbox.style.display = 'flex';
-    }
+        function showImage(index) {
+            if(index < 0) index = images.length - 1;
+            if(index >= images.length) index = 0;
+            currentIndex = index;
+            lightboxImg.src = images[currentIndex].src;
+            lightbox.style.display = 'flex';
+            prevBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+        }
 
-    galleryImages.forEach((img, index) => {
-        img.addEventListener('click', () => {
-            showImage(index);
+        images.forEach((img, index) => {
+            img.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showImage(index);
+            });
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentIndex + 1);
         });
     });
 
-    prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        showImage(currentIndex - 1);
+    // Tekli galeriler (duyurular vb.)
+    const singleImages = document.querySelectorAll('.gallery-img');
+    singleImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+        });
     });
 
-    nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        showImage(currentIndex + 1);
-    });
-
+    // Overlay tıklama ile kapatma
     lightbox.addEventListener('click', () => {
         lightbox.style.display = 'none';
         lightboxImg.src = '';
@@ -195,7 +246,6 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 
 <script>
-    // Firebase yapılandırma
     const firebaseConfig = {
         apiKey: "AIzaSyAdPt8XuUEzJugYI2R9NpUXUCUQXttHaXI",
         authDomain: "bbat-295c4.firebaseapp.com",
@@ -203,29 +253,23 @@
         appId: "1:849546748999:web:476431352773d260fcfd62"
     };
 
-    // Firebase başlat
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
     const db = firebase.firestore();
 
-    // Kullanıcı durumuna göre butonları göster/gizle ve kullanıcı adını getir
-    auth.onAuthStateChanged(async (user) => {
-        const authButtons = document.getElementById('auth-buttons');
-        const userInfo = document.getElementById('user-info');
-        const welcomeText = document.getElementById('welcome-text');
+    const authButtons = document.getElementById('auth-buttons');
+    const userInfo = document.getElementById('user-info');
+    const welcomeText = document.getElementById('welcome-text');
 
+    auth.onAuthStateChanged(async (user) => {
         if (user) {
             authButtons.style.display = 'none';
             userInfo.style.display = 'block';
 
             try {
                 const userDoc = await db.collection('users').doc(user.uid).get();
-                if (userDoc.exists) {
-                    const username = userDoc.data().username || user.email.split('@')[0];
-                    welcomeText.textContent = `Hoş geldiniz, ${username}`;
-                } else {
-                    welcomeText.textContent = `Hoş geldiniz, ${user.email.split('@')[0]}`;
-                }
+                const username = userDoc.exists ? (userDoc.data().username || user.email.split('@')[0]) : user.email.split('@')[0];
+                welcomeText.textContent = `Hoş geldiniz, ${username}`;
             } catch (error) {
                 console.error("Kullanıcı adı alınırken hata:", error);
                 welcomeText.textContent = `Hoş geldiniz, ${user.email.split('@')[0]}`;
@@ -240,25 +284,24 @@
     // Çıkış yap
     function logout() {
         auth.signOut().then(() => {
-            alert("Çıkış yapıldı.");
             window.location.reload();
         }).catch((error) => {
             alert("Çıkış yapılamadı: " + error.message);
         });
     }
 
-    // Giriş ve kayıt yönlendirme
-    document.getElementById("signup-btn").addEventListener("click", function () {
+    document.getElementById("signup-btn").addEventListener("click", () => {
         window.location.href = "register.html";
     });
 
-    document.getElementById("login-btn").addEventListener("click", function () {
+    document.getElementById("login-btn").addEventListener("click", () => {
         window.location.href = "login.html";
     });
 
-    // Çıkış butonuna tıklama dinleyicisi
     document.getElementById("logout-btn").addEventListener("click", logout);
 </script>
 
+
+    
 </body>
 </html>
