@@ -63,6 +63,114 @@ header .unilogo img {
 
 
 
+
+
+
+
+/* Container */
+.duyurular-container {
+    max-width: 1500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Başlık */
+.duyurular h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Paragraflar */
+.duyurular p {
+    line-height: 1.6;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+
+/* Tarihler */
+.duyurular p.meta {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+/* Flex container: görsel ve metin yan yana */
+.duyuru-flex {
+    display: flex;
+    align-items: center; /* Dikey ortala */
+    gap: 20px; /* Aralarındaki boşluk */
+    margin-bottom: 20px;
+}
+
+/* Görsel */
+.duyuru-img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* Metin alanı */
+.duyuru-text {
+    flex: 1; /* Kalan alanı kaplar */
+}
+
+/* Linkler */
+.duyurular a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.duyurular a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive: mobilde metin altına düşer ve ortalanır */
+@media (max-width: 600px) {
+    .duyuru-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .duyuru-img {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 giriş yap butonları ayarları/
 
 .menu-toggle {
